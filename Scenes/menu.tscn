@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://dlpfedcr4l4oi"]
+
+[ext_resource type="Texture2D" uid="uid://d3443kgqceuje" path="res://Assets/background.png" id="1_1rerr"]
+[ext_resource type="Script" uid="uid://b67l4648grlpq" path="res://Scenes/menu.gd" id="1_wwsa2"]
+[ext_resource type="Texture2D" uid="uid://c2i1tv4a4l3dk" path="res://Assets/Title Screen + Menu/title.png" id="2_158mb"]
+[ext_resource type="PackedScene" uid="uid://bmjutjioj6aq7" path="res://Scenes/bar.tscn" id="2_jsrd8"]
+[ext_resource type="Texture2D" uid="uid://rpgrgqa3w68a" path="res://Assets/Title Screen + Menu/Start.png" id="3_wwsa2"]
+[ext_resource type="Texture2D" uid="uid://yaxo1k1c2jgf" path="res://Assets/Title Screen + Menu/Quit.png" id="4_jsrd8"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_wwsa2")
+game_scene = ExtResource("2_jsrd8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1080
+
+[node name="Container" type="Control" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="TextureRect" parent="Container"]
+z_index = -99
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_1rerr")
+
+[node name="Title" type="TextureRect" parent="Container"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -407.5
+offset_top = 125.0
+offset_right = 407.5
+offset_bottom = 331.0
+grow_horizontal = 2
+texture = ExtResource("2_158mb")
+
+[node name="Start" type="TextureButton" parent="Container"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -204.0
+offset_top = -680.0
+offset_right = 204.0
+offset_bottom = -546.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("3_wwsa2")
+
+[node name="Quit" type="TextureButton" parent="Container"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -203.5
+offset_top = -480.0
+offset_right = 203.5
+offset_bottom = -348.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("4_jsrd8")
+
+[connection signal="pressed" from="Container/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Container/Quit" to="." method="_on_quit_pressed"]
