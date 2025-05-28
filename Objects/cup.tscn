@@ -1,0 +1,87 @@
+[gd_scene load_steps=15 format=3 uid="uid://bqa3xx5isw1mg"]
+
+[ext_resource type="Texture2D" uid="uid://wdmb7nebmn1o" path="res://Assets/CupColor.png" id="1_fvawt"]
+[ext_resource type="Texture2D" uid="uid://dox7dijg8ukou" path="res://Assets/Flavours/Banana Milk.png" id="2_vt0x6"]
+[ext_resource type="Texture2D" uid="uid://boy43mocu65sa" path="res://Assets/Flavours/Coconut Milk.png" id="3_3bk43"]
+[ext_resource type="Texture2D" uid="uid://5as73tgx40yy" path="res://Assets/Flavours/Grape Tea.png" id="4_lhqkd"]
+[ext_resource type="Texture2D" uid="uid://2nw0ow24fr1w" path="res://Assets/Flavours/Green Tea.png" id="5_vmr3r"]
+[ext_resource type="Texture2D" uid="uid://bnfg1oaj6slcv" path="res://Assets/Flavours/Matcha Milk Tea.png" id="6_ucu3l"]
+[ext_resource type="Texture2D" uid="uid://stdaggbubt0l" path="res://Assets/Flavours/Omonously Blue Tea.png" id="7_2j2h3"]
+[ext_resource type="Texture2D" uid="uid://dw2qpqc5oox4j" path="res://Assets/Flavours/Strawberry Tea.png" id="8_rko0t"]
+[ext_resource type="Texture2D" uid="uid://cbhb1ethxnlta" path="res://Assets/Flavours/Taro Milk Tea.png" id="9_fk617"]
+[ext_resource type="Texture2D" uid="uid://b6sjc0sehenbd" path="res://Assets/Flavours/Watermelon Milk Tea.png" id="10_vn6d8"]
+[ext_resource type="Texture2D" uid="uid://jykrn30q7pjx" path="res://Assets/Cup 1.png" id="11_ru7pb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qmqbs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fvawt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ist6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vt0x6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3bk43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lhqkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vmr3r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ucu3l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2j2h3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rko0t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fk617")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vn6d8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oxmff"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_ru7pb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Cup" type="StaticBody2D"]
+
+[node name="CupColorSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qmqbs")
+
+[node name="Flavor" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4.49998, 76.5)
+scale = Vector2(1.04658, 1.05814)
+sprite_frames = SubResource("SpriteFrames_7ist6")
+frame = 5
+
+[node name="CupSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_oxmff")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-164, -140, -136, 67, -104, 278, -38, 297, 43, 292, 95, 276, 111, 178, 128, 67, 155, -142, 165, -140, 104, 284, 42, 308, -42, 307, -112, 285, -132, 167, -177, -140)

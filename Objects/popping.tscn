@@ -1,0 +1,54 @@
+[gd_scene load_steps=11 format=3 uid="uid://teownpwnb4ln"]
+
+[ext_resource type="PackedScene" uid="uid://cwf57i7jyt4f1" path="res://Objects/boba.tscn" id="1_0qokq"]
+[ext_resource type="Texture2D" uid="uid://cofkpf88d0r1q" path="res://Assets/Balls/Blueberry Popping.png" id="2_qfvh4"]
+[ext_resource type="Texture2D" uid="uid://cq5tyv43vj2y1" path="res://Assets/Balls/Dragon Fruit popping.png" id="3_x2g5x"]
+[ext_resource type="Texture2D" uid="uid://d3nojrxaqdyu8" path="res://Assets/Balls/Lemon Popping.png" id="4_a8p3s"]
+[ext_resource type="Texture2D" uid="uid://jpfxsr7bio47" path="res://Assets/Balls/Lychee popping.png" id="5_x88mi"]
+[ext_resource type="Texture2D" uid="uid://b2mvnva5tve8q" path="res://Assets/Balls/Passion fruit popping.png" id="6_mpi37"]
+[ext_resource type="Texture2D" uid="uid://c28ff2w6r631d" path="res://Assets/Balls/Strawberry.png" id="7_r7uws"]
+[ext_resource type="Texture2D" uid="uid://cx510hfvohs22" path="res://Assets/Balls/Tapioca Pearls.png" id="8_dq50e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0qokq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qfvh4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_x2g5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_a8p3s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_x88mi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mpi37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_r7uws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dq50e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qfvh4"]
+radius = 20.025
+
+[node name="Popping" type="Node2D"]
+
+[node name="Boba" parent="." instance=ExtResource("1_0qokq")]
+
+[node name="Sprite" parent="Boba" index="0"]
+sprite_frames = SubResource("SpriteFrames_0qokq")
+
+[node name="Collision" parent="Boba" index="1"]
+shape = SubResource("CircleShape2D_qfvh4")
+
+[editable path="Boba"]

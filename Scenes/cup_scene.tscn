@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://dg5odwydt02uc"]
+
+[ext_resource type="PackedScene" uid="uid://bqa3xx5isw1mg" path="res://Objects/cup.tscn" id="1_4yey8"]
+[ext_resource type="Script" uid="uid://6y1qptrfiwi1" path="res://Scenes/cup_scene.gd" id="1_wwt46"]
+[ext_resource type="Texture2D" uid="uid://c6wcg2qab0mhy" path="res://Assets/minus.png" id="2_wwt46"]
+[ext_resource type="Texture2D" uid="uid://drrev05qfu3wy" path="res://Assets/Plus_symbol.svg" id="3_gf28i"]
+[ext_resource type="FontFile" uid="uid://0bgfkgsbv3oy" path="res://Assets/Fonts/Lilly/Lilly__.ttf" id="4_poclr"]
+[ext_resource type="PackedScene" uid="uid://bl6v5x4jrlkxc" path="res://Scenes/boba_pick.tscn" id="5_2wn78"]
+
+[node name="CupScene" type="Node2D"]
+script = ExtResource("1_wwt46")
+
+[node name="CupAndMenu" type="Node2D" parent="."]
+visible = false
+
+[node name="Cup" parent="CupAndMenu" instance=ExtResource("1_4yey8")]
+position = Vector2(940, 606)
+
+[node name="BobaSpawn" type="Node2D" parent="CupAndMenu"]
+position = Vector2(950, 201)
+
+[node name="Node2D" type="Control" parent="CupAndMenu"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Minus" type="TextureButton" parent="CupAndMenu/Node2D"]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 774.0
+offset_right = 2011.0
+offset_bottom = 2374.0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("2_wwt46")
+metadata/_edit_use_anchors_ = true
+
+[node name="Plus" type="TextureButton" parent="CupAndMenu/Node2D"]
+layout_mode = 0
+offset_left = 1247.0
+offset_top = 748.0
+offset_right = 1747.0
+offset_bottom = 1348.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("3_gf28i")
+metadata/_edit_use_anchors_ = true
+
+[node name="BobaCount" type="Label" parent="CupAndMenu/Node2D"]
+layout_mode = 0
+offset_left = 818.0
+offset_top = 927.0
+offset_right = 1056.0
+offset_bottom = 996.0
+theme_override_fonts/font = ExtResource("4_poclr")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BobaPick" parent="." instance=ExtResource("5_2wn78")]
+position = Vector2(957, 511)
+
+[connection signal="pressed" from="CupAndMenu/Node2D/Minus" to="." method="_on_minus_pressed"]
+[connection signal="pressed" from="CupAndMenu/Node2D/Plus" to="." method="_on_plus_pressed"]

@@ -1,0 +1,179 @@
+[gd_scene load_steps=15 format=3 uid="uid://bl6v5x4jrlkxc"]
+
+[ext_resource type="Script" uid="uid://rs312ha0p65c" path="res://Scenes/boba_pick.gd" id="1_b4ruk"]
+[ext_resource type="Texture2D" uid="uid://cofkpf88d0r1q" path="res://Assets/Balls/Blueberry Popping.png" id="2_vqj6l"]
+[ext_resource type="Texture2D" uid="uid://btonv3a3nv5eh" path="res://Assets/Balls/Coffee Jelly.png" id="3_ga3lv"]
+[ext_resource type="Texture2D" uid="uid://cq5tyv43vj2y1" path="res://Assets/Balls/Dragon Fruit popping.png" id="4_cdvlj"]
+[ext_resource type="Texture2D" uid="uid://78eulyjxxu3" path="res://Assets/Balls/Grape Jelly.png" id="5_yd7x3"]
+[ext_resource type="Texture2D" uid="uid://bcig27ycdafsy" path="res://Assets/Balls/Green Apple Jelly.png" id="6_b4ruk"]
+[ext_resource type="Texture2D" uid="uid://d3nojrxaqdyu8" path="res://Assets/Balls/Lemon Popping.png" id="7_s7633"]
+[ext_resource type="Texture2D" uid="uid://jpfxsr7bio47" path="res://Assets/Balls/Lychee popping.png" id="8_s7633"]
+[ext_resource type="Texture2D" uid="uid://cijtentqv24bk" path="res://Assets/Balls/Mango Jelly.png" id="9_7hqxv"]
+[ext_resource type="Texture2D" uid="uid://b2mvnva5tve8q" path="res://Assets/Balls/Passion fruit popping.png" id="10_1rkjo"]
+[ext_resource type="Texture2D" uid="uid://c28ff2w6r631d" path="res://Assets/Balls/Strawberry.png" id="11_dgkk1"]
+[ext_resource type="Texture2D" uid="uid://cx510hfvohs22" path="res://Assets/Balls/Tapioca Pearls.png" id="12_rqvka"]
+[ext_resource type="FontFile" uid="uid://0bgfkgsbv3oy" path="res://Assets/Fonts/Lilly/Lilly__.ttf" id="13_s7633"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_7hqxv"]
+
+[node name="BobaPick" type="Node2D"]
+script = ExtResource("1_b4ruk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 448.0
+offset_bottom = 640.0
+
+[node name="Buttons" type="Control" parent="VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Balls" type="GridContainer" parent="VBoxContainer/Buttons"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 106.0
+offset_right = 224.0
+offset_bottom = 256.0
+scale = Vector2(2, 2)
+columns = 4
+
+[node name="CoffeeJelly" type="Button" parent="VBoxContainer/Buttons/Balls"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+button_group = SubResource("ButtonGroup_7hqxv")
+metadata/value = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/Buttons/Balls/CoffeeJelly"]
+texture = ExtResource("3_ga3lv")
+centered = false
+
+[node name="GrapeJelly" type="Button" parent="VBoxContainer/Buttons/Balls"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+button_group = SubResource("ButtonGroup_7hqxv")
+metadata/value = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/Buttons/Balls/GrapeJelly"]
+texture = ExtResource("5_yd7x3")
+centered = false
+
+[node name="GreenAppleJelly" type="Button" parent="VBoxContainer/Buttons/Balls"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+button_group = SubResource("ButtonGroup_7hqxv")
+metadata/value = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/Buttons/Balls/GreenAppleJelly"]
+texture = ExtResource("6_b4ruk")
+centered = false
+
+[node name="MangoJelly" type="Button" parent="VBoxContainer/Buttons/Balls"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+button_group = SubResource("ButtonGroup_7hqxv")
+metadata/value = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/Buttons/Balls/MangoJelly"]
+texture = ExtResource("9_7hqxv")
+centered = false
+
+[node name="BlueberryPopping" type="Button" parent="VBoxContainer/Buttons/Balls"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+button_group = SubResource("ButtonGroup_7hqxv")
+metadata/value = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/Buttons/Balls/BlueberryPopping"]
+texture = ExtResource("2_vqj6l")
+centered = false
+
+[node name="DragonFruitPopping" type="Button" parent="VBoxContainer/Buttons/Balls"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+button_group = SubResource("ButtonGroup_7hqxv")
+metadata/value = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/Buttons/Balls/DragonFruitPopping"]
+texture = ExtResource("4_cdvlj")
+centered = false
+
+[node name="LemonPopping" type="Button" parent="VBoxContainer/Buttons/Balls"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+button_group = SubResource("ButtonGroup_7hqxv")
+metadata/value = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/Buttons/Balls/LemonPopping"]
+texture = ExtResource("7_s7633")
+centered = false
+
+[node name="LycheePopping" type="Button" parent="VBoxContainer/Buttons/Balls"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+button_group = SubResource("ButtonGroup_7hqxv")
+metadata/value = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/Buttons/Balls/LycheePopping"]
+texture = ExtResource("8_s7633")
+centered = false
+
+[node name="PassionFruitPopping" type="Button" parent="VBoxContainer/Buttons/Balls"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+button_group = SubResource("ButtonGroup_7hqxv")
+metadata/value = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/Buttons/Balls/PassionFruitPopping"]
+texture = ExtResource("10_1rkjo")
+centered = false
+
+[node name="StrawberryPopping" type="Button" parent="VBoxContainer/Buttons/Balls"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+button_group = SubResource("ButtonGroup_7hqxv")
+metadata/value = 9
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/Buttons/Balls/StrawberryPopping"]
+texture = ExtResource("11_dgkk1")
+centered = false
+
+[node name="TapicoaPearls" type="Button" parent="VBoxContainer/Buttons/Balls"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+button_group = SubResource("ButtonGroup_7hqxv")
+metadata/value = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/Buttons/Balls/TapicoaPearls"]
+texture = ExtResource("12_rqvka")
+centered = false
+
+[node name="Confirm" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("13_s7633")
+theme_override_font_sizes/font_size = 32
+text = "CONFIRM"
+
+[connection signal="pressed" from="VBoxContainer/Confirm" to="." method="_on_confirm_pressed"]
