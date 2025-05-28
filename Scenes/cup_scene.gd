@@ -2,9 +2,10 @@ extends Node2D
 
 @onready var jelly: PackedScene = preload("res://Objects/jelly.tscn")
 @onready var popping: PackedScene = preload("res://Objects/popping.tscn")
-@onready var boba_spawn: Node2D = $CupAndMenu/BobaSpawn
-@onready var boba_count_label: Label = $CupAndMenu/Node2D/BobaCount
+@onready var boba_spawn: Node2D = $CupAndMenu/Container/BobaSpawn
+@onready var boba_count_label: Label = $CupAndMenu/Container2/Cup/BobaCount
 @onready var boba_pick: Node2D = $BobaPick
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var bobaCount: int = 0
 
@@ -31,3 +32,7 @@ func _on_minus_pressed() -> void:
 		child.queue_free()
 		bobaCount -= 1
 		boba_count_label.text = str(bobaCount)
+
+
+func _on_cup_and_menu_visibility_changed() -> void:
+	animation_player.play("cup_drop")

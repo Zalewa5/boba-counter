@@ -6,6 +6,7 @@
 [node name="Bar" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
+z_index = -99
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_ggknq")
@@ -17,9 +18,10 @@ limit_right = 1920
 limit_bottom = 1080
 
 [node name="CupScene" parent="." instance=ExtResource("1_w5oem")]
-position = Vector2(578, 2)
+position = Vector2(100, 0)
 
 [node name="CupScene2" parent="." instance=ExtResource("1_w5oem")]
-position = Vector2(-534, -1)
+position = Vector2(740, 0)
 
 [node name="CupScene3" parent="." instance=ExtResource("1_w5oem")]
+position = Vector2(1380, 0)
