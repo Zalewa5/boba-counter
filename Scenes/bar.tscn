@@ -1,9 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://bmjutjioj6aq7"]
 
-[ext_resource type="PackedScene" uid="uid://dg5odwydt02uc" path="res://Scenes/cup_scene.tscn" id="1_w5oem"]
+[ext_resource type="Script" uid="uid://c8agkc1xwsovf" path="res://Scenes/bar.gd" id="1_ggknq"]
 [ext_resource type="Texture2D" uid="uid://d3443kgqceuje" path="res://Assets/background.png" id="2_ggknq"]
 
 [node name="Bar" type="Node2D"]
+script = ExtResource("1_ggknq")
 
 [node name="Background" type="TextureRect" parent="."]
 z_index = -99
@@ -16,12 +17,3 @@ limit_left = 0
 limit_top = 0
 limit_right = 1920
 limit_bottom = 1080
-
-[node name="CupScene" parent="." instance=ExtResource("1_w5oem")]
-position = Vector2(100, 0)
-
-[node name="CupScene2" parent="." instance=ExtResource("1_w5oem")]
-position = Vector2(740, 0)
-
-[node name="CupScene3" parent="." instance=ExtResource("1_w5oem")]
-position = Vector2(1380, 0)

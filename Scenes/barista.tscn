@@ -1,0 +1,272 @@
+[gd_scene load_steps=14 format=3 uid="uid://bldxl5g8nr4s2"]
+
+[ext_resource type="Texture2D" uid="uid://d3443kgqceuje" path="res://Assets/background.png" id="1_c1s4g"]
+[ext_resource type="Texture2D" uid="uid://bn55aq7siroqa" path="res://Assets/Title Screen + Menu/Stand.png" id="2_m6jni"]
+[ext_resource type="Texture2D" uid="uid://dnihfvkyl1by3" path="res://Assets/Title Screen + Menu/Yapp.png" id="3_8bn03"]
+[ext_resource type="Texture2D" uid="uid://bslvu7vvimmw4" path="res://Assets/Title Screen + Menu/Menu (Pearls).png" id="4_ik4nu"]
+[ext_resource type="Texture2D" uid="uid://c5sc8yf3vusn" path="res://Assets/Title Screen + Menu/Menu (Tea flavour).png" id="5_vl2ng"]
+[ext_resource type="Texture2D" uid="uid://deeaaqguhjnd5" path="res://Assets/Title Screen + Menu/Speech.png" id="6_743ta"]
+[ext_resource type="Script" uid="uid://24ou542ld6jh" path="res://Scenes/tea_menu.gd" id="6_tcn13"]
+[ext_resource type="FontFile" uid="uid://025v4gi7455b" path="res://Assets/Fonts/hey_bro/HeyBro!-Regular.otf" id="6_vl2ng"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ew3u8"]
+atlas = ExtResource("3_8bn03")
+region = Rect2(0, 0, 643, 1029)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ik4nu"]
+atlas = ExtResource("3_8bn03")
+region = Rect2(643, 0, 643, 1029)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vl2ng"]
+atlas = ExtResource("3_8bn03")
+region = Rect2(1286, 0, 643, 1029)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_743ta"]
+atlas = ExtResource("3_8bn03")
+region = Rect2(1929, 0, 643, 1029)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tcn13"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_m6jni")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ew3u8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ik4nu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vl2ng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_743ta")
+}],
+"loop": true,
+"name": &"yap",
+"speed": 5.0
+}]
+
+[node name="Barista" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+z_index = -99
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_c1s4g")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1080
+
+[node name="Yapper" type="AnimatedSprite2D" parent="."]
+position = Vector2(1598.5, 565.5)
+sprite_frames = SubResource("SpriteFrames_tcn13")
+metadata/_edit_lock_ = true
+
+[node name="BobaMenu" type="Sprite2D" parent="."]
+position = Vector2(487, 539.5)
+texture = ExtResource("4_ik4nu")
+metadata/_edit_lock_ = true
+
+[node name="TeaMenu" type="Sprite2D" parent="."]
+position = Vector2(487, 539.5)
+texture = ExtResource("5_vl2ng")
+script = ExtResource("6_tcn13")
+
+[node name="Button" type="Button" parent="TeaMenu"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -285.0
+offset_top = -179.0
+offset_right = -25.0
+offset_bottom = -84.0
+text = "0"
+
+[node name="Label" type="Label" parent="TeaMenu/Button"]
+layout_mode = 0
+offset_right = 260.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.129412, 0.113725, 0.145098, 1)
+theme_override_constants/line_spacing = -20
+theme_override_fonts/font = ExtResource("6_vl2ng")
+theme_override_font_sizes/font_size = 40
+text = "Banana milk"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="TeaMenu"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -285.0
+offset_top = -59.0
+offset_right = -25.0
+offset_bottom = 36.0
+text = "1"
+
+[node name="Label" type="Label" parent="TeaMenu/Button2"]
+layout_mode = 0
+offset_right = 260.0
+offset_bottom = 106.0
+theme_override_colors/font_color = Color(0.129412, 0.113725, 0.145098, 1)
+theme_override_constants/line_spacing = -20
+theme_override_fonts/font = ExtResource("6_vl2ng")
+theme_override_font_sizes/font_size = 40
+text = "Matcha 
+Milk Tea"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button3" type="Button" parent="TeaMenu"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -285.0
+offset_top = 80.0
+offset_right = -25.0
+offset_bottom = 175.0
+text = "2"
+
+[node name="Label" type="Label" parent="TeaMenu/Button3"]
+layout_mode = 0
+offset_right = 260.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.129412, 0.113725, 0.145098, 1)
+theme_override_constants/line_spacing = -20
+theme_override_fonts/font = ExtResource("6_vl2ng")
+theme_override_font_sizes/font_size = 40
+text = "Taro Milk Tea"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button4" type="Button" parent="TeaMenu"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -285.0
+offset_top = 213.0
+offset_right = -25.0
+offset_bottom = 308.0
+text = "3"
+
+[node name="Label" type="Label" parent="TeaMenu/Button4"]
+layout_mode = 0
+offset_right = 260.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.129412, 0.113725, 0.145098, 1)
+theme_override_constants/line_spacing = -20
+theme_override_fonts/font = ExtResource("6_vl2ng")
+theme_override_font_sizes/font_size = 40
+text = "Watermelon
+Milk Tea"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button5" type="Button" parent="TeaMenu"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -285.0
+offset_top = 349.0
+offset_right = -25.0
+offset_bottom = 444.0
+text = "4"
+
+[node name="Label" type="Label" parent="TeaMenu/Button5"]
+layout_mode = 0
+offset_right = 260.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.129412, 0.113725, 0.145098, 1)
+theme_override_constants/line_spacing = -20
+theme_override_fonts/font = ExtResource("6_vl2ng")
+theme_override_font_sizes/font_size = 40
+text = "Coconut milk"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button6" type="Button" parent="TeaMenu"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 147.0
+offset_top = -179.0
+offset_right = 407.0
+offset_bottom = -84.0
+text = "5"
+
+[node name="Label" type="Label" parent="TeaMenu/Button6"]
+layout_mode = 0
+offset_right = 260.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.129412, 0.113725, 0.145098, 1)
+theme_override_constants/line_spacing = -20
+theme_override_fonts/font = ExtResource("6_vl2ng")
+theme_override_font_sizes/font_size = 40
+text = "Green Tea"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button7" type="Button" parent="TeaMenu"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 155.0
+offset_top = -43.0
+offset_right = 415.0
+offset_bottom = 52.0
+text = "6"
+
+[node name="Label" type="Label" parent="TeaMenu/Button7"]
+layout_mode = 0
+offset_right = 260.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.129412, 0.113725, 0.145098, 1)
+theme_override_constants/line_spacing = -20
+theme_override_fonts/font = ExtResource("6_vl2ng")
+theme_override_font_sizes/font_size = 40
+text = "Grape Tea"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button8" type="Button" parent="TeaMenu"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 155.0
+offset_top = 85.0
+offset_right = 415.0
+offset_bottom = 180.0
+text = "7"
+
+[node name="Label" type="Label" parent="TeaMenu/Button8"]
+layout_mode = 0
+offset_right = 260.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.129412, 0.113725, 0.145098, 1)
+theme_override_constants/line_spacing = -20
+theme_override_fonts/font = ExtResource("6_vl2ng")
+theme_override_font_sizes/font_size = 40
+text = "Strawberry
+Tea"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button9" type="Button" parent="TeaMenu"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 155.0
+offset_top = 213.0
+offset_right = 415.0
+offset_bottom = 308.0
+text = "8"
+
+[node name="Label" type="Label" parent="TeaMenu/Button9"]
+layout_mode = 0
+offset_right = 260.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.129412, 0.113725, 0.145098, 1)
+theme_override_constants/line_spacing = -20
+theme_override_fonts/font = ExtResource("6_vl2ng")
+theme_override_font_sizes/font_size = 40
+text = "Omonously Blue
+Tea"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Speech" type="Sprite2D" parent="."]
+position = Vector2(1432.5, 854.5)
+texture = ExtResource("6_743ta")
+metadata/_edit_lock_ = true

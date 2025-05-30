@@ -3,24 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://bqa3xx5isw1mg" path="res://Objects/cup.tscn" id="1_4yey8"]
 [ext_resource type="Script" uid="uid://6y1qptrfiwi1" path="res://Scenes/cup_scene.gd" id="1_wwt46"]
 [ext_resource type="Texture2D" uid="uid://c6wcg2qab0mhy" path="res://Assets/minus.png" id="2_wwt46"]
-[ext_resource type="FontFile" uid="uid://0bgfkgsbv3oy" path="res://Assets/Fonts/Lilly/Lilly__.ttf" id="4_poclr"]
 [ext_resource type="PackedScene" uid="uid://bl6v5x4jrlkxc" path="res://Scenes/boba_pick.tscn" id="5_2wn78"]
+[ext_resource type="FontFile" uid="uid://bl2f8pe5tb27f" path="res://Assets/Fonts/hey_bro/HeyBro!-Regular.ttf" id="6_qmqdc"]
 [ext_resource type="Texture2D" uid="uid://v2xbdxojl7g5" path="res://Assets/plus.png" id="6_ybyuf"]
-
-[sub_resource type="Animation" id="Animation_ybyuf"]
-resource_name = "cup_drop"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CupAndMenu/Container2/Cup:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(210, -600), Vector2(210, 488)]
-}
 
 [sub_resource type="Animation" id="Animation_qmqdc"]
 length = 0.001
@@ -35,6 +20,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(210, 488)]
+}
+
+[sub_resource type="Animation" id="Animation_ybyuf"]
+resource_name = "cup_drop"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CupAndMenu/Container2/Cup:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(210, -600), Vector2(210, 488)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bdt3e"]
@@ -94,11 +94,12 @@ metadata/_edit_use_anchors_ = true
 
 [node name="BobaCount" type="Label" parent="CupAndMenu/Container2/Cup"]
 offset_left = -210.0
-offset_top = -34.0
+offset_top = -280.0
 offset_right = 210.0
-offset_bottom = 35.0
-theme_override_fonts/font = ExtResource("4_poclr")
-theme_override_font_sizes/font_size = 40
+offset_bottom = -176.0
+theme_override_colors/font_color = Color(0.172833, 0.172833, 0.172833, 1)
+theme_override_fonts/font = ExtResource("6_qmqdc")
+theme_override_font_sizes/font_size = 80
 text = "0"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
