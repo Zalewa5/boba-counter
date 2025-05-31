@@ -1,6 +1,6 @@
 extends TextureRect
 
-@onready var button: TextureButton = $"../Button"
+@onready var button: TextureButton = $"../Next"
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var message: set = set_message
