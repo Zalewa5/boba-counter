@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bldxl5g8nr4s2"]
+[gd_scene load_steps=27 format=3 uid="uid://bldxl5g8nr4s2"]
 
 [ext_resource type="Texture2D" uid="uid://d3443kgqceuje" path="res://Assets/background.png" id="1_c1s4g"]
 [ext_resource type="Script" uid="uid://7ijt8xxarpbv" path="res://Scenes/barista.gd" id="1_tcn13"]
@@ -12,6 +12,7 @@
 [ext_resource type="FontFile" uid="uid://025v4gi7455b" path="res://Assets/Fonts/hey_bro/HeyBro!-Regular.otf" id="6_vl2ng"]
 [ext_resource type="Texture2D" uid="uid://uikce2d2s1d5" path="res://Assets/Title Screen + Menu/Next.png" id="10_8peb6"]
 [ext_resource type="Script" uid="uid://53idqaq8e5hu" path="res://Scenes/dialog_bubble.gd" id="10_lyero"]
+[ext_resource type="Texture2D" uid="uid://d1qd055185cds" path="res://Assets/Title Screen + Menu/AnotherDrink.png" id="13_hd6s8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ew3u8"]
 atlas = ExtResource("3_8bn03")
@@ -456,5 +457,30 @@ offset_right = 1189.0
 offset_bottom = 710.0
 texture_normal = ExtResource("10_8peb6")
 
+[node name="AnotherDrink" type="TextureRect" parent="."]
+visible = false
+offset_left = 72.0
+offset_top = 319.0
+offset_right = 948.0
+offset_bottom = 533.0
+texture = ExtResource("13_hd6s8")
+
+[node name="Yes" type="Button" parent="AnotherDrink"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 2.0
+offset_top = 89.0
+offset_right = 431.0
+offset_bottom = 211.0
+
+[node name="No" type="Button" parent="AnotherDrink"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 445.0
+offset_top = 89.0
+offset_right = 873.0
+offset_bottom = 212.0
+
 [connection signal="animation_finished" from="DialogBubble/AnimationPlayer" to="DialogBubble" method="_on_animation_player_animation_finished"]
 [connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="AnotherDrink/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="AnotherDrink/No" to="." method="_on_no_pressed"]
