@@ -12,17 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://b6sjc0sehenbd" path="res://Assets/Flavours/Watermelon Milk Tea.png" id="10_vn6d8"]
 [ext_resource type="Texture2D" uid="uid://jykrn30q7pjx" path="res://Assets/Cup 1.png" id="11_ru7pb"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_qmqbs"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_fvawt")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_7ist6"]
 animations = [{
 "frames": [{
@@ -58,6 +47,17 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_qmqbs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fvawt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_oxmff"]
 animations = [{
 "frames": [{
@@ -71,19 +71,20 @@ animations = [{
 
 [node name="Cup" type="StaticBody2D"]
 
-[node name="CupColorSprite" type="AnimatedSprite2D" parent="."]
-z_index = -2
-sprite_frames = SubResource("SpriteFrames_qmqbs")
-
 [node name="Flavor" type="AnimatedSprite2D" parent="."]
 z_index = -1
 position = Vector2(-4.49998, 76.5)
 scale = Vector2(1.04658, 1.05814)
 sprite_frames = SubResource("SpriteFrames_7ist6")
-frame = 5
+
+[node name="CupColorSprite" type="AnimatedSprite2D" parent="."]
+z_index = -2
+sprite_frames = SubResource("SpriteFrames_qmqbs")
 
 [node name="CupSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_oxmff")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-164, -140, -136, 67, -104, 278, -38, 297, 43, 292, 95, 276, 111, 178, 128, 67, 155, -142, 165, -140, 104, 284, 42, 308, -42, 307, -112, 285, -132, 167, -177, -140)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
