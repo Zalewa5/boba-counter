@@ -255,6 +255,9 @@ offset_left = -423.0
 offset_top = -203.0
 offset_right = -23.0
 offset_bottom = -103.0
+toggle_mode = true
+text = "0"
+metadata/type = 0
 
 [node name="Selection" type="TextureRect" parent="BobaMenu/Button"]
 visible = false
@@ -291,6 +294,9 @@ offset_left = -423.0
 offset_top = -88.0
 offset_right = -23.0
 offset_bottom = 12.0
+toggle_mode = true
+text = "1"
+metadata/type = 1
 
 [node name="Selection" type="TextureRect" parent="BobaMenu/Button2"]
 visible = false
@@ -327,6 +333,9 @@ offset_left = -423.0
 offset_top = 27.0
 offset_right = -23.0
 offset_bottom = 127.0
+toggle_mode = true
+text = "2"
+metadata/type = 2
 
 [node name="Selection" type="TextureRect" parent="BobaMenu/Button3"]
 visible = false
@@ -363,6 +372,9 @@ offset_left = -423.0
 offset_top = 142.0
 offset_right = -23.0
 offset_bottom = 242.0
+toggle_mode = true
+text = "3"
+metadata/type = 3
 
 [node name="Selection" type="TextureRect" parent="BobaMenu/Button4"]
 visible = false
@@ -399,6 +411,9 @@ offset_left = -423.0
 offset_top = 257.0
 offset_right = -23.0
 offset_bottom = 357.0
+toggle_mode = true
+text = "4"
+metadata/type = 4
 
 [node name="Selection" type="TextureRect" parent="BobaMenu/Button5"]
 visible = false
@@ -435,6 +450,9 @@ offset_left = -423.0
 offset_top = 372.0
 offset_right = -23.0
 offset_bottom = 472.0
+toggle_mode = true
+text = "5"
+metadata/type = 5
 
 [node name="Selection" type="TextureRect" parent="BobaMenu/Button6"]
 visible = false
@@ -471,6 +489,9 @@ offset_left = 13.0
 offset_top = -203.0
 offset_right = 413.0
 offset_bottom = -103.0
+toggle_mode = true
+text = "6"
+metadata/type = 6
 
 [node name="Selection" type="TextureRect" parent="BobaMenu/Button7"]
 visible = false
@@ -507,6 +528,9 @@ offset_left = 13.0
 offset_top = 27.0
 offset_right = 413.0
 offset_bottom = 127.0
+toggle_mode = true
+text = "0"
+metadata/type = 7
 
 [node name="Selection" type="TextureRect" parent="BobaMenu/Button8"]
 visible = false
@@ -543,6 +567,9 @@ offset_left = 13.0
 offset_top = 142.0
 offset_right = 413.0
 offset_bottom = 242.0
+toggle_mode = true
+text = "1"
+metadata/type = 8
 
 [node name="Selection" type="TextureRect" parent="BobaMenu/Button9"]
 visible = false
@@ -579,6 +606,9 @@ offset_left = 13.0
 offset_top = 257.0
 offset_right = 413.0
 offset_bottom = 357.0
+toggle_mode = true
+text = "2"
+metadata/type = 9
 
 [node name="Selection" type="TextureRect" parent="BobaMenu/Button10"]
 visible = false
@@ -615,6 +645,9 @@ offset_left = 13.0
 offset_top = 372.0
 offset_right = 413.0
 offset_bottom = 472.0
+toggle_mode = true
+text = "3"
+metadata/type = 10
 
 [node name="Selection" type="TextureRect" parent="BobaMenu/Button11"]
 visible = false

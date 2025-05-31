@@ -10,16 +10,16 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_2on4w")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_ii88y")
+"texture": ExtResource("5_tbg52")
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_rjse5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_tbg52")
+"texture": ExtResource("3_ii88y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2on4w")
 }],
 "loop": true,
 "name": &"default",
