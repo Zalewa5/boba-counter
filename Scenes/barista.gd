@@ -5,6 +5,8 @@ extends Node2D
 @onready var tea_menu: Sprite2D = $TeaMenu
 @onready var next: TextureButton = $Next
 @onready var another_drink: TextureRect = $AnotherDrink
+@onready var name_prompt: TextureRect = $NamePrompt
+@onready var line_edit: LineEdit = $NamePrompt/LineEdit
 
 @export var scene: PackedScene
 
@@ -53,13 +55,30 @@ func dialog():
 					animation_player.play("ByeMenu")
 					dialog_bubble.open()
 				5:
+					dialog_state = 6
+					dialog_bubble.message = "Gib name"
+					name_prompt.visible = true
+					dialog_bubble.open()
+				6:
+					if line_edit.text == "":
+						dialog_bubble.message = "Nyo name ;c"
+					else:
+						name_prompt.visible = false
+						Global.cup_name.append(line_edit.text)
+						dialog_bubble.message = line_edit.text
+						line_edit.text = ""
+						dialog_state = 7
+					dialog_bubble.open()
+				7:
 					dialog_state = 0
 					if cup_count >= 4:
 						cup_status = CupStatus.MAX
 						dialog_bubble.message = "nyo more space ;3c"
 						dialog_bubble.open()
 					else:
-						next.disabled = true
+						dialog_bubble.message = "Another one? ;3"
+						dialog_bubble.open()
+						next.visible = false
 						another_drink.visible = true
 					
 		CupStatus.MAX:
@@ -77,12 +96,12 @@ func _on_next_pressed() -> void:
 
 func _on_yes_pressed() -> void:
 	another_drink.visible = false
-	next.disabled = false
+	next.visible = true
 	dialog()
 
 
 func _on_no_pressed() -> void:
 	cup_status = CupStatus.MAX
 	another_drink.visible = false
-	next.disabled = false
+	next.visible = true
 	dialog()

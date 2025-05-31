@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bqa3xx5isw1mg"]
+[gd_scene load_steps=18 format=3 uid="uid://bqa3xx5isw1mg"]
 
 [ext_resource type="Texture2D" uid="uid://wdmb7nebmn1o" path="res://Assets/CupColor.png" id="1_fvawt"]
 [ext_resource type="Texture2D" uid="uid://dox7dijg8ukou" path="res://Assets/Flavours/Banana Milk.png" id="2_vt0x6"]
@@ -9,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://stdaggbubt0l" path="res://Assets/Flavours/Omonously Blue Tea.png" id="7_2j2h3"]
 [ext_resource type="Texture2D" uid="uid://dw2qpqc5oox4j" path="res://Assets/Flavours/Strawberry Tea.png" id="8_rko0t"]
 [ext_resource type="Texture2D" uid="uid://cbhb1ethxnlta" path="res://Assets/Flavours/Taro Milk Tea.png" id="9_fk617"]
+[ext_resource type="Texture2D" uid="uid://ca5apvmuufyly" path="res://Assets/Title Screen + Menu/Label.png" id="10_3bk43"]
 [ext_resource type="Texture2D" uid="uid://b6sjc0sehenbd" path="res://Assets/Flavours/Watermelon Milk Tea.png" id="10_vn6d8"]
+[ext_resource type="FontFile" uid="uid://025v4gi7455b" path="res://Assets/Fonts/hey_bro/HeyBro!-Regular.otf" id="11_lhqkd"]
 [ext_resource type="Texture2D" uid="uid://jykrn30q7pjx" path="res://Assets/Cup 1.png" id="11_ru7pb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7ist6"]
@@ -47,6 +49,17 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_vmr3r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_3bk43")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_qmqbs"]
 animations = [{
 "frames": [{
@@ -77,6 +90,22 @@ position = Vector2(-4.49998, 76.5)
 scale = Vector2(1.04658, 1.05814)
 sprite_frames = SubResource("SpriteFrames_7ist6")
 
+[node name="CupLabel" type="AnimatedSprite2D" parent="."]
+position = Vector2(-7, -9)
+sprite_frames = SubResource("SpriteFrames_vmr3r")
+
+[node name="CupLabelText" type="Label" parent="CupLabel"]
+offset_left = -113.0
+offset_top = -47.0
+offset_right = 119.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0.129412, 0.113725, 0.145098, 1)
+theme_override_fonts/font = ExtResource("11_lhqkd")
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 1
+
 [node name="CupColorSprite" type="AnimatedSprite2D" parent="."]
 z_index = -2
 sprite_frames = SubResource("SpriteFrames_qmqbs")
@@ -85,6 +114,7 @@ sprite_frames = SubResource("SpriteFrames_qmqbs")
 sprite_frames = SubResource("SpriteFrames_oxmff")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 polygon = PackedVector2Array(-164, -140, -136, 67, -104, 278, -38, 297, 43, 292, 95, 276, 111, 178, 128, 67, 155, -142, 165, -140, 104, 284, 42, 308, -42, 307, -112, 285, -132, 167, -177, -140)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

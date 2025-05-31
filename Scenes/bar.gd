@@ -12,3 +12,6 @@ func _ready() -> void:
 		cup.position.x = ((n*pos + (n+1)*pos) / 2) + 60
 		cup.position.y = 0
 		
+		val = Global.cup_name.get(n)
+		cup.find_child("CupLabelText", true, false).text = val
+		
