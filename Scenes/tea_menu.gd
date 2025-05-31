@@ -2,6 +2,7 @@ extends Sprite2D
 
 var tea: int = -1
 
+# When hovers increse font size, when pressed sets tea flavor to its value
 func _ready() -> void:
 	for button in get_children():
 		if button is BaseButton:
@@ -14,6 +15,5 @@ func _ready() -> void:
 				label.add_theme_font_size_override("font_size", 40)
 				)
 			button.pressed.connect(func():
-				print(button.text)
 				tea = (int)(button.text)
 			)

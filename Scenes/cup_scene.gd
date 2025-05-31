@@ -12,6 +12,7 @@ var boba_types: Array # Array with values 0-6 being popping and 7-10 being jelly
 var boba_tastes: Array # Array with values coresponding to frame of correct taste of boba
 var rng := RandomNumberGenerator.new()
 
+# Spawns random boba from selection moving it a little & updates number of bobas on cup
 func _on_plus_pressed() -> void:
 	var boba
 	var id: int = rng.randi_range(0,boba_types.size()-1)
@@ -29,7 +30,7 @@ func _on_plus_pressed() -> void:
 	boba_count += 1
 	boba_count_label.text = str(boba_count)
 
-
+# Deletes last added boba
 func _on_minus_pressed() -> void:
 	var child = boba_spawn.get_child(boba_spawn.get_children().size()-1)
 	if(child != null):
@@ -42,5 +43,4 @@ func _on_minus_pressed() -> void:
 func _ready() -> void:
 	animation_player.play("cup_drop")
 	boba_types = Global.boba_type.get(scene_num)
-	print(boba_types)
 	boba_tastes = Global.boba_taste.get(scene_num)

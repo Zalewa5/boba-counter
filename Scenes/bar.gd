@@ -3,7 +3,10 @@ extends Node2D
 const CUP_SCENE: PackedScene = preload("res://Scenes/cup_scene.tscn")
 
 func _ready() -> void:
+	# Calculate positions for cups
 	var pos = 1800/Global.cups_count
+	
+	# Create cups, assign them numbers, set position, assign flavor sprite value & text on cup's label
 	for n in Global.tea.size():
 		var cup = CUP_SCENE.instantiate()
 		cup.scene_num = n
