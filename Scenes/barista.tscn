@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bldxl5g8nr4s2"]
+[gd_scene load_steps=43 format=3 uid="uid://bldxl5g8nr4s2"]
 
 [ext_resource type="Texture2D" uid="uid://d3443kgqceuje" path="res://Assets/background.png" id="1_c1s4g"]
 [ext_resource type="Script" uid="uid://7ijt8xxarpbv" path="res://Scenes/barista.gd" id="1_tcn13"]
@@ -10,10 +10,23 @@
 [ext_resource type="Texture2D" uid="uid://deeaaqguhjnd5" path="res://Assets/Title Screen + Menu/Speech.png" id="6_743ta"]
 [ext_resource type="Script" uid="uid://24ou542ld6jh" path="res://Scenes/tea_menu.gd" id="6_tcn13"]
 [ext_resource type="FontFile" uid="uid://025v4gi7455b" path="res://Assets/Fonts/hey_bro/HeyBro!-Regular.otf" id="6_vl2ng"]
+[ext_resource type="Script" uid="uid://3houwh5cym4e" path="res://Scenes/boba_menu.gd" id="7_ms5kt"]
+[ext_resource type="Texture2D" uid="uid://cjk5qskh60h2g" path="res://Assets/Title Screen + Menu/Selection.png" id="8_n52ii"]
+[ext_resource type="Texture2D" uid="uid://cx510hfvohs22" path="res://Assets/Balls/Tapioca Pearls.png" id="9_pkpqt"]
 [ext_resource type="Texture2D" uid="uid://uikce2d2s1d5" path="res://Assets/Title Screen + Menu/Next.png" id="10_8peb6"]
 [ext_resource type="Script" uid="uid://53idqaq8e5hu" path="res://Scenes/dialog_bubble.gd" id="10_lyero"]
+[ext_resource type="Texture2D" uid="uid://c28ff2w6r631d" path="res://Assets/Balls/Strawberry.png" id="11_8cgv8"]
+[ext_resource type="Texture2D" uid="uid://b2mvnva5tve8q" path="res://Assets/Balls/Passion fruit popping.png" id="12_yx21d"]
 [ext_resource type="Texture2D" uid="uid://d1qd055185cds" path="res://Assets/Title Screen + Menu/AnotherDrink.png" id="13_hd6s8"]
+[ext_resource type="Texture2D" uid="uid://jpfxsr7bio47" path="res://Assets/Balls/Lychee popping.png" id="13_pqp21"]
+[ext_resource type="Texture2D" uid="uid://cq5tyv43vj2y1" path="res://Assets/Balls/Dragon Fruit popping.png" id="14_8570y"]
 [ext_resource type="Texture2D" uid="uid://dftolbpb7vklu" path="res://Assets/Title Screen + Menu/Name Prompt.png" id="14_nsn0p"]
+[ext_resource type="Texture2D" uid="uid://d3nojrxaqdyu8" path="res://Assets/Balls/Lemon Popping.png" id="15_4rr08"]
+[ext_resource type="Texture2D" uid="uid://cofkpf88d0r1q" path="res://Assets/Balls/Blueberry Popping.png" id="16_bjkdl"]
+[ext_resource type="Texture2D" uid="uid://cijtentqv24bk" path="res://Assets/Balls/Mango Jelly.png" id="17_sisq3"]
+[ext_resource type="Texture2D" uid="uid://bcig27ycdafsy" path="res://Assets/Balls/Green Apple Jelly.png" id="18_0nuha"]
+[ext_resource type="Texture2D" uid="uid://78eulyjxxu3" path="res://Assets/Balls/Grape Jelly.png" id="19_wsd4a"]
+[ext_resource type="Texture2D" uid="uid://btonv3a3nv5eh" path="res://Assets/Balls/Coffee Jelly.png" id="20_wnubw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ew3u8"]
 atlas = ExtResource("3_8bn03")
@@ -234,6 +247,403 @@ metadata/_edit_lock_ = true
 [node name="BobaMenu" type="Sprite2D" parent="."]
 position = Vector2(-500, 539.5)
 texture = ExtResource("4_ik4nu")
+script = ExtResource("7_ms5kt")
+
+[node name="Button" type="Button" parent="BobaMenu"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -423.0
+offset_top = -203.0
+offset_right = -23.0
+offset_bottom = -103.0
+
+[node name="Selection" type="TextureRect" parent="BobaMenu/Button"]
+visible = false
+layout_mode = 0
+offset_left = -34.0
+offset_top = -27.5
+offset_right = 417.0
+offset_bottom = 126.5
+texture = ExtResource("8_n52ii")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BobaMenu/Button"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 100.0
+
+[node name="Boba" type="TextureRect" parent="BobaMenu/Button/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("9_pkpqt")
+
+[node name="Label" type="Label" parent="BobaMenu/Button/HBoxContainer"]
+custom_minimum_size = Vector2(296, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.129412, 0.113725, 0.145098, 1)
+theme_override_fonts/font = ExtResource("6_vl2ng")
+theme_override_font_sizes/font_size = 48
+text = "Tapioca"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="BobaMenu"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -423.0
+offset_top = -88.0
+offset_right = -23.0
+offset_bottom = 12.0
+
+[node name="Selection" type="TextureRect" parent="BobaMenu/Button2"]
+visible = false
+layout_mode = 0
+offset_left = -34.0
+offset_top = -27.5
+offset_right = 417.0
+offset_bottom = 126.5
+texture = ExtResource("8_n52ii")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BobaMenu/Button2"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 100.0
+
+[node name="Boba" type="TextureRect" parent="BobaMenu/Button2/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("11_8cgv8")
+
+[node name="Label" type="Label" parent="BobaMenu/Button2/HBoxContainer"]
+custom_minimum_size = Vector2(296, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.129412, 0.113725, 0.145098, 1)
+theme_override_fonts/font = ExtResource("6_vl2ng")
+theme_override_font_sizes/font_size = 48
+text = "Strawberry"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button3" type="Button" parent="BobaMenu"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -423.0
+offset_top = 27.0
+offset_right = -23.0
+offset_bottom = 127.0
+
+[node name="Selection" type="TextureRect" parent="BobaMenu/Button3"]
+visible = false
+layout_mode = 0
+offset_left = -34.0
+offset_top = -27.5
+offset_right = 417.0
+offset_bottom = 126.5
+texture = ExtResource("8_n52ii")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BobaMenu/Button3"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 100.0
+
+[node name="Boba" type="TextureRect" parent="BobaMenu/Button3/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("12_yx21d")
+
+[node name="Label" type="Label" parent="BobaMenu/Button3/HBoxContainer"]
+custom_minimum_size = Vector2(296, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.129412, 0.113725, 0.145098, 1)
+theme_override_fonts/font = ExtResource("6_vl2ng")
+theme_override_font_sizes/font_size = 48
+text = "Passion Fruit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button4" type="Button" parent="BobaMenu"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -423.0
+offset_top = 142.0
+offset_right = -23.0
+offset_bottom = 242.0
+
+[node name="Selection" type="TextureRect" parent="BobaMenu/Button4"]
+visible = false
+layout_mode = 0
+offset_left = -34.0
+offset_top = -27.5
+offset_right = 417.0
+offset_bottom = 126.5
+texture = ExtResource("8_n52ii")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BobaMenu/Button4"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 100.0
+
+[node name="Boba" type="TextureRect" parent="BobaMenu/Button4/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("13_pqp21")
+
+[node name="Label" type="Label" parent="BobaMenu/Button4/HBoxContainer"]
+custom_minimum_size = Vector2(296, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.129412, 0.113725, 0.145098, 1)
+theme_override_fonts/font = ExtResource("6_vl2ng")
+theme_override_font_sizes/font_size = 48
+text = "Lychee"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button5" type="Button" parent="BobaMenu"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -423.0
+offset_top = 257.0
+offset_right = -23.0
+offset_bottom = 357.0
+
+[node name="Selection" type="TextureRect" parent="BobaMenu/Button5"]
+visible = false
+layout_mode = 0
+offset_left = -34.0
+offset_top = -27.5
+offset_right = 417.0
+offset_bottom = 126.5
+texture = ExtResource("8_n52ii")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BobaMenu/Button5"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 100.0
+
+[node name="Boba" type="TextureRect" parent="BobaMenu/Button5/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("14_8570y")
+
+[node name="Label" type="Label" parent="BobaMenu/Button5/HBoxContainer"]
+custom_minimum_size = Vector2(296, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.129412, 0.113725, 0.145098, 1)
+theme_override_fonts/font = ExtResource("6_vl2ng")
+theme_override_font_sizes/font_size = 48
+text = "Dragon Fruit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button6" type="Button" parent="BobaMenu"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -423.0
+offset_top = 372.0
+offset_right = -23.0
+offset_bottom = 472.0
+
+[node name="Selection" type="TextureRect" parent="BobaMenu/Button6"]
+visible = false
+layout_mode = 0
+offset_left = -34.0
+offset_top = -27.5
+offset_right = 417.0
+offset_bottom = 126.5
+texture = ExtResource("8_n52ii")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BobaMenu/Button6"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 100.0
+
+[node name="Boba" type="TextureRect" parent="BobaMenu/Button6/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("15_4rr08")
+
+[node name="Label" type="Label" parent="BobaMenu/Button6/HBoxContainer"]
+custom_minimum_size = Vector2(296, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.129412, 0.113725, 0.145098, 1)
+theme_override_fonts/font = ExtResource("6_vl2ng")
+theme_override_font_sizes/font_size = 48
+text = "Lemon"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button7" type="Button" parent="BobaMenu"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 13.0
+offset_top = -203.0
+offset_right = 413.0
+offset_bottom = -103.0
+
+[node name="Selection" type="TextureRect" parent="BobaMenu/Button7"]
+visible = false
+layout_mode = 0
+offset_left = -34.0
+offset_top = -27.5
+offset_right = 417.0
+offset_bottom = 126.5
+texture = ExtResource("8_n52ii")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BobaMenu/Button7"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 100.0
+
+[node name="Boba" type="TextureRect" parent="BobaMenu/Button7/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("16_bjkdl")
+
+[node name="Label" type="Label" parent="BobaMenu/Button7/HBoxContainer"]
+custom_minimum_size = Vector2(296, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.129412, 0.113725, 0.145098, 1)
+theme_override_fonts/font = ExtResource("6_vl2ng")
+theme_override_font_sizes/font_size = 48
+text = "Blueberry"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button8" type="Button" parent="BobaMenu"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 13.0
+offset_top = 27.0
+offset_right = 413.0
+offset_bottom = 127.0
+
+[node name="Selection" type="TextureRect" parent="BobaMenu/Button8"]
+visible = false
+layout_mode = 0
+offset_left = -34.0
+offset_top = -27.5
+offset_right = 417.0
+offset_bottom = 126.5
+texture = ExtResource("8_n52ii")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BobaMenu/Button8"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 100.0
+
+[node name="Boba" type="TextureRect" parent="BobaMenu/Button8/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("17_sisq3")
+
+[node name="Label" type="Label" parent="BobaMenu/Button8/HBoxContainer"]
+custom_minimum_size = Vector2(296, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.129412, 0.113725, 0.145098, 1)
+theme_override_fonts/font = ExtResource("6_vl2ng")
+theme_override_font_sizes/font_size = 48
+text = "Mango"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button9" type="Button" parent="BobaMenu"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 13.0
+offset_top = 142.0
+offset_right = 413.0
+offset_bottom = 242.0
+
+[node name="Selection" type="TextureRect" parent="BobaMenu/Button9"]
+visible = false
+layout_mode = 0
+offset_left = -34.0
+offset_top = -27.5
+offset_right = 417.0
+offset_bottom = 126.5
+texture = ExtResource("8_n52ii")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BobaMenu/Button9"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 100.0
+
+[node name="Boba" type="TextureRect" parent="BobaMenu/Button9/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("18_0nuha")
+
+[node name="Label" type="Label" parent="BobaMenu/Button9/HBoxContainer"]
+custom_minimum_size = Vector2(296, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.129412, 0.113725, 0.145098, 1)
+theme_override_fonts/font = ExtResource("6_vl2ng")
+theme_override_font_sizes/font_size = 48
+text = "Green Apple"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button10" type="Button" parent="BobaMenu"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 13.0
+offset_top = 257.0
+offset_right = 413.0
+offset_bottom = 357.0
+
+[node name="Selection" type="TextureRect" parent="BobaMenu/Button10"]
+visible = false
+layout_mode = 0
+offset_left = -34.0
+offset_top = -27.5
+offset_right = 417.0
+offset_bottom = 126.5
+texture = ExtResource("8_n52ii")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BobaMenu/Button10"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 100.0
+
+[node name="Boba" type="TextureRect" parent="BobaMenu/Button10/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("19_wsd4a")
+
+[node name="Label" type="Label" parent="BobaMenu/Button10/HBoxContainer"]
+custom_minimum_size = Vector2(296, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.129412, 0.113725, 0.145098, 1)
+theme_override_fonts/font = ExtResource("6_vl2ng")
+theme_override_font_sizes/font_size = 48
+text = "Grape"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button11" type="Button" parent="BobaMenu"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 13.0
+offset_top = 372.0
+offset_right = 413.0
+offset_bottom = 472.0
+
+[node name="Selection" type="TextureRect" parent="BobaMenu/Button11"]
+visible = false
+layout_mode = 0
+offset_left = -34.0
+offset_top = -27.5
+offset_right = 417.0
+offset_bottom = 126.5
+texture = ExtResource("8_n52ii")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BobaMenu/Button11"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 100.0
+
+[node name="Boba" type="TextureRect" parent="BobaMenu/Button11/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("20_wnubw")
+
+[node name="Label" type="Label" parent="BobaMenu/Button11/HBoxContainer"]
+custom_minimum_size = Vector2(296, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.129412, 0.113725, 0.145098, 1)
+theme_override_fonts/font = ExtResource("6_vl2ng")
+theme_override_font_sizes/font_size = 48
+text = "Coffee"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TeaMenu" type="Sprite2D" parent="."]
 position = Vector2(-500, 539.5)
@@ -472,6 +882,7 @@ texture = ExtResource("13_hd6s8")
 
 [node name="Yes" type="Button" parent="AnotherDrink"]
 self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 2.0
 offset_top = 89.0
 offset_right = 431.0
