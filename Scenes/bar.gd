@@ -6,6 +6,7 @@ func _ready() -> void:
 	var pos = 1800/Global.cups_count
 	for n in Global.tea.size():
 		var cup = CUP_SCENE.instantiate()
+		cup.scene_num = n
 		self.add_child(cup)
 		var val = Global.tea.get(n)
 		cup.find_child("Flavor", true, false).frame = val

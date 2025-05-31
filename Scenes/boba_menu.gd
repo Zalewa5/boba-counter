@@ -19,3 +19,8 @@ func _ready() -> void:
 					boba_taste.remove_at(id)
 					button.find_child("Selection", true, false).visible = false
 			)
+
+func clean() -> void:
+	for button in get_children():
+		if button is BaseButton:
+			button.find_child("Selection", true, false).visible = false

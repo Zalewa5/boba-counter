@@ -7,6 +7,7 @@ extends Node2D
 @onready var another_drink: TextureRect = $AnotherDrink
 @onready var name_prompt: TextureRect = $NamePrompt
 @onready var line_edit: LineEdit = $NamePrompt/LineEdit
+@onready var boba_menu: Sprite2D = $BobaMenu
 
 @export var scene: PackedScene
 
@@ -50,16 +51,29 @@ func dialog():
 					animation_player.play("BobaMenu")
 					dialog_bubble.open()
 				4:
-					dialog_state = 5
-					dialog_bubble.message = "YIPPEE"
-					animation_player.play("ByeMenu")
+					if boba_menu.boba_type.is_empty():
+						dialog_bubble.message = "Try again!"
+						dialog_state = 4
+					else:
+						dialog_bubble.message = "nice"
+						dialog_state = 5
+						Global.boba_type.append(boba_menu.boba_type)
+						Global.boba_taste.append(boba_menu.boba_taste)
+						boba_menu.boba_type = Array([], TYPE_INT, "", null)
+						boba_menu.boba_taste = Array([], TYPE_INT, "", null)
 					dialog_bubble.open()
 				5:
 					dialog_state = 6
+					dialog_bubble.message = "YIPPEE"
+					animation_player.play("ByeMenu")
+					boba_menu.clean()
+					dialog_bubble.open()
+				6:
+					dialog_state = 7
 					dialog_bubble.message = "Gib name"
 					name_prompt.visible = true
 					dialog_bubble.open()
-				6:
+				7:
 					if line_edit.text == "":
 						dialog_bubble.message = "Nyo name ;c"
 					else:
@@ -67,9 +81,9 @@ func dialog():
 						Global.cup_name.append(line_edit.text)
 						dialog_bubble.message = line_edit.text
 						line_edit.text = ""
-						dialog_state = 7
+						dialog_state = 8
 					dialog_bubble.open()
-				7:
+				8:
 					dialog_state = 0
 					if cup_count >= 4:
 						cup_status = CupStatus.MAX
