@@ -1,5 +1,6 @@
 extends Sprite2D
 
+var tea: int = -1
 
 func _ready() -> void:
 	for button in get_children():
@@ -14,5 +15,5 @@ func _ready() -> void:
 				)
 			button.pressed.connect(func():
 				print(button.text)
-				
+				tea = (int)(button.text)
 			)

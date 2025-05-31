@@ -1,6 +1,6 @@
 extends Node
 
-var milk: Array[int]
+var tea: Array[int] = Array([], TYPE_INT, "", null)
 var boba_type: Array[int]
 var boba_taste: Array[int]
-var order: int = 0
+var cups_count: int = 0

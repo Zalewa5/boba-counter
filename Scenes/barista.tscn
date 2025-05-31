@@ -1,8 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://bldxl5g8nr4s2"]
+[gd_scene load_steps=26 format=3 uid="uid://bldxl5g8nr4s2"]
 
 [ext_resource type="Texture2D" uid="uid://d3443kgqceuje" path="res://Assets/background.png" id="1_c1s4g"]
 [ext_resource type="Script" uid="uid://7ijt8xxarpbv" path="res://Scenes/barista.gd" id="1_tcn13"]
 [ext_resource type="Texture2D" uid="uid://bn55aq7siroqa" path="res://Assets/Title Screen + Menu/Stand.png" id="2_m6jni"]
+[ext_resource type="PackedScene" uid="uid://bmjutjioj6aq7" path="res://Scenes/bar.tscn" id="2_xs73d"]
 [ext_resource type="Texture2D" uid="uid://dnihfvkyl1by3" path="res://Assets/Title Screen + Menu/Yapp.png" id="3_8bn03"]
 [ext_resource type="Texture2D" uid="uid://bslvu7vvimmw4" path="res://Assets/Title Screen + Menu/Menu (Pearls).png" id="4_ik4nu"]
 [ext_resource type="Texture2D" uid="uid://c5sc8yf3vusn" path="res://Assets/Title Screen + Menu/Menu (Tea flavour).png" id="5_vl2ng"]
@@ -201,6 +202,7 @@ _data = {
 
 [node name="Barista" type="Node2D"]
 script = ExtResource("1_tcn13")
+scene = ExtResource("2_xs73d")
 
 [node name="Background" type="TextureRect" parent="."]
 z_index = -99

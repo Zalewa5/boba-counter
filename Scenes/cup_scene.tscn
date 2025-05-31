@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dg5odwydt02uc"]
+[gd_scene load_steps=9 format=3 uid="uid://dg5odwydt02uc"]
 
 [ext_resource type="PackedScene" uid="uid://bqa3xx5isw1mg" path="res://Objects/cup.tscn" id="1_4yey8"]
 [ext_resource type="Script" uid="uid://6y1qptrfiwi1" path="res://Scenes/cup_scene.gd" id="1_wwt46"]
 [ext_resource type="Texture2D" uid="uid://c6wcg2qab0mhy" path="res://Assets/minus.png" id="2_wwt46"]
-[ext_resource type="PackedScene" uid="uid://bl6v5x4jrlkxc" path="res://Scenes/boba_pick.tscn" id="5_2wn78"]
 [ext_resource type="FontFile" uid="uid://bl2f8pe5tb27f" path="res://Assets/Fonts/hey_bro/HeyBro!-Regular.ttf" id="6_qmqdc"]
 [ext_resource type="Texture2D" uid="uid://v2xbdxojl7g5" path="res://Assets/plus.png" id="6_ybyuf"]
 
@@ -46,13 +45,10 @@ _data = {
 [node name="CupScene" type="Node2D"]
 script = ExtResource("1_wwt46")
 
-[node name="BobaPick" parent="." instance=ExtResource("5_2wn78")]
-position = Vector2(0, 241)
-
 [node name="CupAndMenu" type="VBoxContainer" parent="."]
-visible = false
 custom_minimum_size = Vector2(420, 0)
-offset_right = 420.0
+offset_left = -210.0
+offset_right = 210.0
 offset_bottom = 1080.0
 
 [node name="Container" type="HBoxContainer" parent="CupAndMenu"]
