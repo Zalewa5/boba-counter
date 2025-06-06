@@ -691,6 +691,13 @@ offset_right = -25.0
 offset_bottom = -84.0
 text = "0"
 
+[node name="Selection" type="TextureRect" parent="TeaMenu/Button"]
+visible = false
+offset_right = 451.0
+offset_bottom = 154.0
+scale = Vector2(0.57, 0.62)
+texture = ExtResource("8_n52ii")
+
 [node name="Label" type="Label" parent="TeaMenu/Button"]
 layout_mode = 0
 offset_right = 260.0
@@ -710,6 +717,13 @@ offset_top = -59.0
 offset_right = -25.0
 offset_bottom = 36.0
 text = "1"
+
+[node name="Selection" type="TextureRect" parent="TeaMenu/Button2"]
+visible = false
+offset_right = 451.0
+offset_bottom = 165.0
+scale = Vector2(0.57, 0.62)
+texture = ExtResource("8_n52ii")
 
 [node name="Label" type="Label" parent="TeaMenu/Button2"]
 layout_mode = 0
@@ -732,6 +746,13 @@ offset_right = -25.0
 offset_bottom = 175.0
 text = "2"
 
+[node name="Selection" type="TextureRect" parent="TeaMenu/Button3"]
+visible = false
+offset_right = 451.0
+offset_bottom = 154.0
+scale = Vector2(0.57, 0.62)
+texture = ExtResource("8_n52ii")
+
 [node name="Label" type="Label" parent="TeaMenu/Button3"]
 layout_mode = 0
 offset_right = 260.0
@@ -751,6 +772,13 @@ offset_top = 213.0
 offset_right = -25.0
 offset_bottom = 308.0
 text = "3"
+
+[node name="Selection" type="TextureRect" parent="TeaMenu/Button4"]
+visible = false
+offset_right = 451.0
+offset_bottom = 154.0
+scale = Vector2(0.57, 0.62)
+texture = ExtResource("8_n52ii")
 
 [node name="Label" type="Label" parent="TeaMenu/Button4"]
 layout_mode = 0
@@ -773,6 +801,13 @@ offset_right = -25.0
 offset_bottom = 444.0
 text = "4"
 
+[node name="Selection" type="TextureRect" parent="TeaMenu/Button5"]
+visible = false
+offset_right = 451.0
+offset_bottom = 154.0
+scale = Vector2(0.57, 0.62)
+texture = ExtResource("8_n52ii")
+
 [node name="Label" type="Label" parent="TeaMenu/Button5"]
 layout_mode = 0
 offset_right = 260.0
@@ -792,6 +827,13 @@ offset_top = -179.0
 offset_right = 407.0
 offset_bottom = -84.0
 text = "5"
+
+[node name="Selection" type="TextureRect" parent="TeaMenu/Button6"]
+visible = false
+offset_right = 451.0
+offset_bottom = 154.0
+scale = Vector2(0.57, 0.62)
+texture = ExtResource("8_n52ii")
 
 [node name="Label" type="Label" parent="TeaMenu/Button6"]
 layout_mode = 0
@@ -813,6 +855,13 @@ offset_right = 415.0
 offset_bottom = 52.0
 text = "6"
 
+[node name="Selection" type="TextureRect" parent="TeaMenu/Button7"]
+visible = false
+offset_right = 451.0
+offset_bottom = 154.0
+scale = Vector2(0.57, 0.62)
+texture = ExtResource("8_n52ii")
+
 [node name="Label" type="Label" parent="TeaMenu/Button7"]
 layout_mode = 0
 offset_right = 260.0
@@ -832,6 +881,13 @@ offset_top = 85.0
 offset_right = 415.0
 offset_bottom = 180.0
 text = "7"
+
+[node name="Selection" type="TextureRect" parent="TeaMenu/Button8"]
+visible = false
+offset_right = 451.0
+offset_bottom = 154.0
+scale = Vector2(0.57, 0.62)
+texture = ExtResource("8_n52ii")
 
 [node name="Label" type="Label" parent="TeaMenu/Button8"]
 layout_mode = 0
@@ -853,6 +909,13 @@ offset_top = 213.0
 offset_right = 415.0
 offset_bottom = 308.0
 text = "8"
+
+[node name="Selection" type="TextureRect" parent="TeaMenu/Button9"]
+visible = false
+offset_right = 451.0
+offset_bottom = 154.0
+scale = Vector2(0.57, 0.62)
+texture = ExtResource("8_n52ii")
 
 [node name="Label" type="Label" parent="TeaMenu/Button9"]
 layout_mode = 0

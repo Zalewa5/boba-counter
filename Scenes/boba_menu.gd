@@ -20,7 +20,16 @@ func _ready() -> void:
 					boba_type.remove_at(id)
 					boba_taste.remove_at(id)
 					button.find_child("Selection", true, false).visible = false
-			)
+				)
+			button.mouse_entered.connect(func():
+				var label = button.find_child("Label")
+				label.add_theme_font_size_override("font_size", 56)
+				)
+			button.mouse_exited.connect(func():
+				var label = button.find_child("Label")
+				label.add_theme_font_size_override("font_size", 48)
+				)
+			
 
 # Hides selection background of all buttons
 func clean() -> void:

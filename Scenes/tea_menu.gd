@@ -16,4 +16,7 @@ func _ready() -> void:
 				)
 			button.pressed.connect(func():
 				tea = (int)(button.text)
+				for b in get_children():
+					b.find_child("Selection").visible = false
+				button.find_child("Selection").visible = true
 			)
