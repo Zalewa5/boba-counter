@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6wcg2qab0mhy"
-path="res://.godot/imported/minus.png-aba003ad0a17037f9fffb2cc828ad61e.ctex"
+uid="uid://7sjwcnn8vw0g"
+path="res://.godot/imported/Coconut Milk (L).png-5a4a55a759639a4a4ae9a60a9353d444.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cup/minus.png"
-dest_files=["res://.godot/imported/minus.png-aba003ad0a17037f9fffb2cc828ad61e.ctex"]
+source_file="res://Assets/Cups Sizes + Flavours/Larg/Coconut Milk (L).png"
+dest_files=["res://.godot/imported/Coconut Milk (L).png-5a4a55a759639a4a4ae9a60a9353d444.ctex"]
 
 [params]
 

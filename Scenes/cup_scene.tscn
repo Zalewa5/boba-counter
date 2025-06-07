@@ -1,44 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://dg5odwydt02uc"]
+[gd_scene load_steps=13 format=3 uid="uid://dg5odwydt02uc"]
 
-[ext_resource type="PackedScene" uid="uid://bqa3xx5isw1mg" path="res://Objects/cup.tscn" id="1_4yey8"]
+[ext_resource type="PackedScene" uid="uid://bqa3xx5isw1mg" path="res://Objects/L_cup.tscn" id="1_4yey8"]
 [ext_resource type="Script" uid="uid://6y1qptrfiwi1" path="res://Scenes/cup_scene.gd" id="1_wwt46"]
-[ext_resource type="Texture2D" uid="uid://c6wcg2qab0mhy" path="res://Assets/Cup/minus.png" id="2_wwt46"]
+[ext_resource type="Texture2D" uid="uid://c6wcg2qab0mhy" path="res://Assets/Cups Sizes + Flavours/minus.png" id="2_wwt46"]
+[ext_resource type="PackedScene" uid="uid://bbu1sxxuvgdog" path="res://Objects/M_cup.tscn" id="6_bdt3e"]
 [ext_resource type="FontFile" uid="uid://bl2f8pe5tb27f" path="res://Assets/Fonts/hey_bro/HeyBro!-Regular.ttf" id="6_qmqdc"]
-[ext_resource type="Texture2D" uid="uid://v2xbdxojl7g5" path="res://Assets/Cup/plus.png" id="6_ybyuf"]
-
-[sub_resource type="Animation" id="Animation_qmqdc"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CupAndMenu/Container2/Cup:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(210, 488)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CupAndMenu/Container2/Cup:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
+[ext_resource type="Texture2D" uid="uid://v2xbdxojl7g5" path="res://Assets/Cups Sizes + Flavours/plus.png" id="6_ybyuf"]
+[ext_resource type="PackedScene" uid="uid://d2doea05t31d8" path="res://Objects/S_cup.tscn" id="7_qmqdc"]
 
 [sub_resource type="Animation" id="Animation_ybyuf"]
-resource_name = "cup_drop"
+resource_name = "L_cup_drop"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CupAndMenu/Container2/Cup:position")
+tracks/0/path = NodePath("CupAndMenu/L/L_Cup:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -50,7 +25,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CupAndMenu/Container2/Cup:visible")
+tracks/1/path = NodePath("CupAndMenu/L/L_Cup:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -59,61 +34,272 @@ tracks/1/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CupAndMenu/L:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_bdt3e"]
+resource_name = "M_cup_drop"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CupAndMenu/M/M_Cup:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(210, -600), Vector2(210, 488)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CupAndMenu/M/M_Cup:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CupAndMenu/M:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_qmqdc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CupAndMenu/L/L_Cup:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(210, -600)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CupAndMenu/L/L_Cup:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CupAndMenu/M/M_Cup:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(210, -600)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CupAndMenu/M/M_Cup:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CupAndMenu/S/S_Cup:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(210, -600)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CupAndMenu/S/S_Cup:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CupAndMenu/S:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CupAndMenu/M:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CupAndMenu/L:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_i6bqd"]
+resource_name = "S_cup_drop"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CupAndMenu/S/S_Cup:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(210, -600), Vector2(210, 488)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CupAndMenu/S/S_Cup:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CupAndMenu/S:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bdt3e"]
 _data = {
+&"L_cup_drop": SubResource("Animation_ybyuf"),
+&"M_cup_drop": SubResource("Animation_bdt3e"),
 &"RESET": SubResource("Animation_qmqdc"),
-&"cup_drop": SubResource("Animation_ybyuf")
+&"S_cup_drop": SubResource("Animation_i6bqd")
 }
 
 [node name="CupScene" type="Node2D"]
 script = ExtResource("1_wwt46")
 
-[node name="CupAndMenu" type="VBoxContainer" parent="."]
+[node name="CupAndMenu" type="Control" parent="."]
 custom_minimum_size = Vector2(420, 0)
+layout_mode = 3
+anchors_preset = 0
 offset_left = -210.0
 offset_right = 210.0
-offset_bottom = 1080.0
+offset_bottom = 1108.0
 
 [node name="Container" type="HBoxContainer" parent="CupAndMenu"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
+offset_right = 420.0
+offset_bottom = 200.0
 
 [node name="BobaSpawn" type="Node2D" parent="CupAndMenu/Container"]
 position = Vector2(210, 100)
 
-[node name="Container2" type="HBoxContainer" parent="CupAndMenu"]
+[node name="L" type="HBoxContainer" parent="CupAndMenu"]
+visible = false
 custom_minimum_size = Vector2(200, 450)
 layout_mode = 2
+offset_top = 204.0
+offset_right = 420.0
+offset_bottom = 654.0
 
-[node name="Cup" parent="CupAndMenu/Container2" instance=ExtResource("1_4yey8")]
+[node name="L_Cup" parent="CupAndMenu/L" instance=ExtResource("1_4yey8")]
 visible = false
 z_as_relative = false
-position = Vector2(210, 488)
+position = Vector2(210, -600)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CupAndMenu/Container2/Cup"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CupAndMenu/L/L_Cup"]
 custom_minimum_size = Vector2(72, 72)
 offset_left = -127.0
 offset_top = -261.0
 offset_right = 139.0
 offset_bottom = -189.0
 
-[node name="Minus" type="TextureButton" parent="CupAndMenu/Container2/Cup/HBoxContainer"]
+[node name="Minus" type="TextureButton" parent="CupAndMenu/L/L_Cup/HBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("2_wwt46")
 metadata/_edit_use_anchors_ = true
 
-[node name="VSeparator" type="VSeparator" parent="CupAndMenu/Container2/Cup/HBoxContainer"]
+[node name="VSeparator" type="VSeparator" parent="CupAndMenu/L/L_Cup/HBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
 
-[node name="Plus" type="TextureButton" parent="CupAndMenu/Container2/Cup/HBoxContainer"]
+[node name="Plus" type="TextureButton" parent="CupAndMenu/L/L_Cup/HBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("6_ybyuf")
 metadata/_edit_use_anchors_ = true
 
-[node name="BobaCount" type="Label" parent="CupAndMenu/Container2/Cup"]
+[node name="BobaCount" type="Label" parent="CupAndMenu/L/L_Cup"]
 offset_left = -210.0
 offset_top = -280.0
 offset_right = 210.0
@@ -125,11 +311,105 @@ text = "0"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="M" type="HBoxContainer" parent="CupAndMenu"]
+visible = false
+custom_minimum_size = Vector2(200, 450)
+layout_mode = 2
+offset_top = 204.0
+offset_right = 420.0
+offset_bottom = 654.0
+
+[node name="M_Cup" parent="CupAndMenu/M" instance=ExtResource("6_bdt3e")]
+visible = false
+position = Vector2(210, -600)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CupAndMenu/M/M_Cup"]
+custom_minimum_size = Vector2(72, 72)
+offset_left = -141.0
+offset_top = -229.0
+offset_right = 125.0
+offset_bottom = -157.0
+
+[node name="Minus" type="TextureButton" parent="CupAndMenu/M/M_Cup/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_wwt46")
+metadata/_edit_use_anchors_ = true
+
+[node name="VSeparator" type="VSeparator" parent="CupAndMenu/M/M_Cup/HBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+
+[node name="Plus" type="TextureButton" parent="CupAndMenu/M/M_Cup/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_ybyuf")
+metadata/_edit_use_anchors_ = true
+
+[node name="BobaCount" type="Label" parent="CupAndMenu/M/M_Cup"]
+offset_left = -224.0
+offset_top = -248.0
+offset_right = 196.0
+offset_bottom = -144.0
+theme_override_colors/font_color = Color(0.172833, 0.172833, 0.172833, 1)
+theme_override_fonts/font = ExtResource("6_qmqdc")
+theme_override_font_sizes/font_size = 80
+text = "0"
+horizontal_alignment = 1
+
+[node name="S" type="HBoxContainer" parent="CupAndMenu"]
+visible = false
+custom_minimum_size = Vector2(200, 450)
+layout_mode = 2
+offset_top = 204.0
+offset_right = 420.0
+offset_bottom = 654.0
+
+[node name="S_Cup" parent="CupAndMenu/S" instance=ExtResource("7_qmqdc")]
+visible = false
+position = Vector2(210, -600)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CupAndMenu/S/S_Cup"]
+custom_minimum_size = Vector2(72, 72)
+offset_left = -133.0
+offset_top = -189.0
+offset_right = 133.0
+offset_bottom = -117.0
+
+[node name="Minus" type="TextureButton" parent="CupAndMenu/S/S_Cup/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_wwt46")
+metadata/_edit_use_anchors_ = true
+
+[node name="VSeparator" type="VSeparator" parent="CupAndMenu/S/S_Cup/HBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+
+[node name="Plus" type="TextureButton" parent="CupAndMenu/S/S_Cup/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_ybyuf")
+metadata/_edit_use_anchors_ = true
+
+[node name="BobaCount" type="Label" parent="CupAndMenu/S/S_Cup"]
+offset_left = -216.0
+offset_top = -208.0
+offset_right = 204.0
+offset_bottom = -104.0
+theme_override_colors/font_color = Color(0.172833, 0.172833, 0.172833, 1)
+theme_override_fonts/font = ExtResource("6_qmqdc")
+theme_override_font_sizes/font_size = 80
+text = "0"
+horizontal_alignment = 1
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_bdt3e")
 }
 
 [connection signal="visibility_changed" from="CupAndMenu" to="." method="_on_cup_and_menu_visibility_changed"]
-[connection signal="pressed" from="CupAndMenu/Container2/Cup/HBoxContainer/Minus" to="." method="_on_minus_pressed"]
-[connection signal="pressed" from="CupAndMenu/Container2/Cup/HBoxContainer/Plus" to="." method="_on_plus_pressed"]
+[connection signal="pressed" from="CupAndMenu/L/L_Cup/HBoxContainer/Minus" to="." method="_on_minus_pressed"]
+[connection signal="pressed" from="CupAndMenu/L/L_Cup/HBoxContainer/Plus" to="." method="_on_plus_pressed"]
+[connection signal="pressed" from="CupAndMenu/M/M_Cup/HBoxContainer/Minus" to="." method="_on_minus_pressed"]
+[connection signal="pressed" from="CupAndMenu/M/M_Cup/HBoxContainer/Plus" to="." method="_on_plus_pressed"]
+[connection signal="pressed" from="CupAndMenu/S/S_Cup/HBoxContainer/Minus" to="." method="_on_minus_pressed"]
+[connection signal="pressed" from="CupAndMenu/S/S_Cup/HBoxContainer/Plus" to="." method="_on_plus_pressed"]

@@ -17,9 +17,10 @@ func _ready() -> void:
 				else:
 					var type = button.get_meta("type") as int
 					var id = boba_type.find(type)
-					boba_type.remove_at(id)
-					boba_taste.remove_at(id)
-					button.find_child("Selection", true, false).visible = false
+					if id > -1:
+						boba_type.remove_at(id)
+						boba_taste.remove_at(id)
+						button.find_child("Selection", true, false).visible = false
 				)
 			button.mouse_entered.connect(func():
 				var label = button.find_child("Label")
@@ -36,3 +37,4 @@ func clean() -> void:
 	for button in get_children():
 		if button is BaseButton:
 			button.find_child("Selection", true, false).visible = false
+			button.button_pressed = false

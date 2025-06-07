@@ -1,0 +1,103 @@
+[gd_scene load_steps=16 format=3 uid="uid://bbu1sxxuvgdog"]
+
+[ext_resource type="Texture2D" uid="uid://bqkb5sq6lnl1r" path="res://Assets/Cups Sizes + Flavours/Medium/Banana Milk (M).png" id="1_kfbiy"]
+[ext_resource type="Texture2D" uid="uid://cbhbevardvyk4" path="res://Assets/Cups Sizes + Flavours/Medium/Matcha Milk Tea (M).png" id="2_hud8b"]
+[ext_resource type="Texture2D" uid="uid://cge46xn0ip7fg" path="res://Assets/Cups Sizes + Flavours/Medium/Taro Milk Tea (M).png" id="3_oh0tt"]
+[ext_resource type="Texture2D" uid="uid://rqyf7825de0y" path="res://Assets/Cups Sizes + Flavours/Medium/Watermelon Milk Tea (M).png" id="4_26egw"]
+[ext_resource type="Texture2D" uid="uid://bq8a3xxl2na8r" path="res://Assets/Cups Sizes + Flavours/Medium/Coconut Milk (M).png" id="5_k8ylu"]
+[ext_resource type="Texture2D" uid="uid://bpdl4jigk2l5n" path="res://Assets/Cups Sizes + Flavours/Medium/Green Tea (M).png" id="6_c1kdi"]
+[ext_resource type="Texture2D" uid="uid://caclu3pi2vekc" path="res://Assets/Cups Sizes + Flavours/Medium/Grape Tea (M).png" id="7_u31pl"]
+[ext_resource type="Texture2D" uid="uid://180nbanue6c2" path="res://Assets/Cups Sizes + Flavours/Medium/Strawberry Tea (M).png" id="8_46wgp"]
+[ext_resource type="Texture2D" uid="uid://c7eto752vrmhe" path="res://Assets/Cups Sizes + Flavours/Medium/Omonously Blue Tea (M).png" id="9_w6qep"]
+[ext_resource type="FontFile" uid="uid://025v4gi7455b" path="res://Assets/Fonts/hey_bro/HeyBro!-Regular.otf" id="10_a6c7t"]
+[ext_resource type="Texture2D" uid="uid://uuvhpdo8dmcb" path="res://Assets/Cups Sizes + Flavours/Medium/Medium Cup Color.png" id="11_a6c7t"]
+[ext_resource type="Texture2D" uid="uid://ba1e4p208yxih" path="res://Assets/Cups Sizes + Flavours/Medium/Medium Cup + Label.png" id="12_ip8v7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ist6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kfbiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hud8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_oh0tt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_26egw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_k8ylu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_c1kdi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_u31pl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_46wgp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_w6qep")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qmqbs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_a6c7t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oxmff"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_ip8v7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="M_Cup" type="StaticBody2D"]
+
+[node name="Flavor" type="AnimatedSprite2D" parent="."]
+z_index = -1
+position = Vector2(-4.14793, 76.5)
+sprite_frames = SubResource("SpriteFrames_7ist6")
+
+[node name="CupColorSprite" type="AnimatedSprite2D" parent="."]
+z_index = -2
+sprite_frames = SubResource("SpriteFrames_qmqbs")
+
+[node name="CupSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_oxmff")
+
+[node name="CupLabelText" type="Label" parent="."]
+offset_left = -136.0
+offset_top = -40.0
+offset_right = 136.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0.129412, 0.113725, 0.145098, 1)
+theme_override_fonts/font = ExtResource("10_a6c7t")
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(149, -105, 162, -105, 110, 242, 47, 259, -3, 268, -66, 264, -112, 244, -169, -105, -160, -104, -130, 66, -105, 237, -61, 256, -3, 259, 51, 249, 102, 233, 130, 62)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

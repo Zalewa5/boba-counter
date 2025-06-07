@@ -23,6 +23,7 @@ func _ready() -> void:
 
 func test_bar() -> void:
 	Global.cups_count = 1
+	Global.cup_size.append(3)
 	Global.tea.append(0)
 	Global.boba_taste.append([0,0])
 	Global.boba_type.append([7,1])
