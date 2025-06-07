@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://dlpfedcr4l4oi"]
 
-[ext_resource type="Texture2D" uid="uid://d3443kgqceuje" path="res://Assets/background.png" id="1_1rerr"]
+[ext_resource type="Texture2D" uid="uid://d3443kgqceuje" path="res://Assets/Title Screen + Menu/background.png" id="1_1rerr"]
 [ext_resource type="Script" uid="uid://b67l4648grlpq" path="res://Scenes/menu.gd" id="1_wwsa2"]
 [ext_resource type="Texture2D" uid="uid://c2i1tv4a4l3dk" path="res://Assets/Title Screen + Menu/title.png" id="2_158mb"]
 [ext_resource type="PackedScene" uid="uid://bldxl5g8nr4s2" path="res://Scenes/barista.tscn" id="2_jsrd8"]
-[ext_resource type="Texture2D" uid="uid://rpgrgqa3w68a" path="res://Assets/Title Screen + Menu/Start.png" id="3_wwsa2"]
-[ext_resource type="Texture2D" uid="uid://yaxo1k1c2jgf" path="res://Assets/Title Screen + Menu/Quit.png" id="4_jsrd8"]
+[ext_resource type="Texture2D" uid="uid://rpgrgqa3w68a" path="res://Assets/Buttons/Start.png" id="3_wwsa2"]
+[ext_resource type="Texture2D" uid="uid://yaxo1k1c2jgf" path="res://Assets/Buttons/Quit.png" id="4_jsrd8"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_wwsa2")

@@ -27,14 +27,15 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2on4w"]
-radius = 11.3137
-height = 43.8424
+radius = 10.6057
+height = 41.014
 
 [node name="Jelly" type="Node2D"]
 
 [node name="Boba" parent="." instance=ExtResource("1_72li1")]
 
 [node name="Sprite" parent="Boba" index="0"]
+scale = Vector2(0.85, 0.85)
 sprite_frames = SubResource("SpriteFrames_72li1")
 
 [node name="Collision" parent="Boba" index="1"]

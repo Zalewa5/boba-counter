@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6wcg2qab0mhy"
-path="res://.godot/imported/minus.png-3aa6431a78bdde86c0f6eebf9d38ea2f.ctex"
+uid="uid://wdmb7nebmn1o"
+path="res://.godot/imported/CupColor.png-4f88da5681ed405f3d5c15686749c1c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/minus.png"
-dest_files=["res://.godot/imported/minus.png-3aa6431a78bdde86c0f6eebf9d38ea2f.ctex"]
+source_file="res://Assets/Cup/CupColor.png"
+dest_files=["res://.godot/imported/CupColor.png-4f88da5681ed405f3d5c15686749c1c9.ctex"]
 
 [params]
 

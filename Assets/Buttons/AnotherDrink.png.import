@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rpgrgqa3w68a"
-path="res://.godot/imported/Start.png-d604770990c732a22469e359beb5c2b5.ctex"
+uid="uid://d1qd055185cds"
+path="res://.godot/imported/AnotherDrink.png-7245ea3580582e0d209f89fe60e8f288.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Title Screen + Menu/Start.png"
-dest_files=["res://.godot/imported/Start.png-d604770990c732a22469e359beb5c2b5.ctex"]
+source_file="res://Assets/Buttons/AnotherDrink.png"
+dest_files=["res://.godot/imported/AnotherDrink.png-7245ea3580582e0d209f89fe60e8f288.ctex"]
 
 [params]
 

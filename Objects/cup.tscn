@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://bqa3xx5isw1mg"]
 
-[ext_resource type="Texture2D" uid="uid://wdmb7nebmn1o" path="res://Assets/CupColor.png" id="1_fvawt"]
+[ext_resource type="Texture2D" uid="uid://wdmb7nebmn1o" path="res://Assets/Cup/CupColor.png" id="1_fvawt"]
 [ext_resource type="Texture2D" uid="uid://dox7dijg8ukou" path="res://Assets/Flavours/Banana Milk.png" id="2_vt0x6"]
 [ext_resource type="Texture2D" uid="uid://boy43mocu65sa" path="res://Assets/Flavours/Coconut Milk.png" id="3_3bk43"]
 [ext_resource type="Texture2D" uid="uid://5as73tgx40yy" path="res://Assets/Flavours/Grape Tea.png" id="4_lhqkd"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ca5apvmuufyly" path="res://Assets/Title Screen + Menu/Label.png" id="10_3bk43"]
 [ext_resource type="Texture2D" uid="uid://b6sjc0sehenbd" path="res://Assets/Flavours/Watermelon Milk Tea.png" id="10_vn6d8"]
 [ext_resource type="FontFile" uid="uid://025v4gi7455b" path="res://Assets/Fonts/hey_bro/HeyBro!-Regular.otf" id="11_lhqkd"]
-[ext_resource type="Texture2D" uid="uid://jykrn30q7pjx" path="res://Assets/Cup 1.png" id="11_ru7pb"]
+[ext_resource type="Texture2D" uid="uid://jykrn30q7pjx" path="res://Assets/Cup/Cup 1.png" id="11_ru7pb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7ist6"]
 animations = [{

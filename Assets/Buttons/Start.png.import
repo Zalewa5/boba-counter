@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wdmb7nebmn1o"
-path="res://.godot/imported/CupColor.png-8c72d5df762bac9ee8e83032fbe6a4ab.ctex"
+uid="uid://rpgrgqa3w68a"
+path="res://.godot/imported/Start.png-af64ba81d0e7a8eab3817f59d02c0049.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CupColor.png"
-dest_files=["res://.godot/imported/CupColor.png-8c72d5df762bac9ee8e83032fbe6a4ab.ctex"]
+source_file="res://Assets/Buttons/Start.png"
+dest_files=["res://.godot/imported/Start.png-af64ba81d0e7a8eab3817f59d02c0049.ctex"]
 
 [params]
 

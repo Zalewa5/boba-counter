@@ -8,6 +8,8 @@ extends Node2D
 @onready var name_prompt: TextureRect = $NamePrompt
 @onready var line_edit: LineEdit = $NamePrompt/LineEdit
 @onready var boba_menu: Sprite2D = $BobaMenu
+@onready var cup_sizes: Sprite2D = $CupSizes
+@onready var conv: Label = $DialogBubble/Message
 
 @export var scene: PackedScene
 
@@ -16,6 +18,10 @@ enum CupStatus {NOT, MAX}
 var cup_status = CupStatus.NOT
 var dialog_state: int = 0
 var cup_count = Global.cups_count
+var rng_answer: int = 0
+var cup_size: int = -1 # 0 - small; 1 - medium; 2 - large; 3 - infinicup
+var boba_type_size: int
+var customer_name: String
 
 func _ready() -> void:
 	dialog()
@@ -25,83 +31,178 @@ func dialog():
 		CupStatus.NOT:
 			match dialog_state:
 				0:
-					cup_count += 1
-					Global.cups_count = cup_count
+					# Message appears only on the first enter to boba shop
 					dialog_state = 1
-					dialog_bubble.message = "Time for drink!"
+					dialog_bubble.message = "Hello, welcome to Boba Blasters!"
 					dialog_bubble.open()
 				1:
-					dialog_bubble.message = "Pick tea flavor"
+					# Loop starts here, pick tea flavor
+					conv.add_theme_font_size_override("font_size", 64)
+					cup_count += 1
+					Global.cups_count = cup_count
+					dialog_bubble.message = "What would you like to order?"
 					animation_player.play("TeaMenu")
 					dialog_bubble.open()
 					dialog_state = 2
 				2:
+					# If tea isn't picked tells to pick again, else gives random answer, adds tea taste to table, resets for tea taste for future
 					if tea_menu.tea == -1:
 						dialog_bubble.message = "Try again!"
 						dialog_state = 2
 					else:
-						dialog_bubble.message = "nice"
+						rng_answer = randi() % 4
+						match rng_answer:
+							0:
+								dialog_bubble.message = "Amazing choice, I see someone has good taste!"
+							1:
+								dialog_bubble.message = "Nice, this one is SO refreshing after a long day at work"
+							2:
+								dialog_bubble.message = "Oooo, interesting choice. I'd pick that too."
+							3:
+								dialog_bubble.message = "I gotta warn you, this flavour is kinda addicting"
 						dialog_state = 3
 						Global.tea.append(tea_menu.tea)
 						tea_menu.tea = -1
+						animation_player.play("ByeTea")
+						tea_menu.clean()
 					dialog_bubble.open()
 				3:
+					# Shows drink size buttons
+					cup_sizes.visible = true
 					dialog_state = 4
-					dialog_bubble.message = "Pick boba!"
-					animation_player.play("BobaMenu")
+					dialog_bubble.message = "How large do you want the drink to be?"
+					next.visible = false
 					dialog_bubble.open()
 				4:
-					if boba_menu.boba_type.is_empty():
+					# Sets answer depending on drink & adds size to table
+					match cup_sizes.cup_size:
+						0:
+							conv.add_theme_font_size_override("font_size", 60)
+							dialog_bubble.message = "Not that thirsty huh? Well it's nice to get a sweet treat once in a while isn't it?"
+						1:
+							dialog_bubble.message = "Awesome"
+						2:
+							dialog_bubble.message = "Big treat for big thirsty I see"
+						3:
+							dialog_bubble.message = "With infinicup, the whole cafe is your cup, enjoy!"
+					Global.cup_size.append(cup_sizes.cup_size)
+					cup_sizes.cup_size = -1
+					dialog_state = 5
+					dialog_bubble.open()
+				5:
+					# Get boba menu & pick boba type
+					dialog_state = 6
+					conv.add_theme_font_size_override("font_size", 64)
+					dialog_bubble.message = "What kind of boba or jelly would you like?"
+					animation_player.play("BobaMenu")
+					dialog_bubble.open()
+				6:
+					# If no boba picked, try again, else adds boba type & taste to tables and gets rid of boba menu
+					boba_type_size = boba_menu.boba_type.size()
+					if boba_type_size == 0:
 						dialog_bubble.message = "Try again!"
-						dialog_state = 4
+						dialog_state = 6
 					else:
-						dialog_bubble.message = "nice"
-						dialog_state = 5
+						if boba_type_size == 1:
+							rng_answer = randi() % 3
+							match rng_answer:
+								0:
+									dialog_bubble.message = "Nothing beats a classic choice."
+								1:
+									dialog_bubble.message = "Keeping it simple I see? Gotta respect that."
+								2:
+									dialog_bubble.message = "You can always add more pearls next time, no pressure though!"
+						elif boba_type_size > 1 && boba_type_size < 6:
+							rng_answer = randi() % 3
+							match rng_answer:
+								0:
+									dialog_bubble.message = "Interesting mix you got there, bet it tastes funky"
+								1:
+									dialog_bubble.message = "Good choices, honestly need to try those myself!"
+								2:
+									conv.add_theme_font_size_override("font_size", 56)
+									dialog_bubble.message = "Huh, didn't know this combo even existed, but by the looks of it this will taste interesting"
+						elif boba_type_size >=6 && boba_type_size < 11:
+							rng_answer = randi() % 3
+							match rng_answer:
+								0:
+									dialog_bubble.message = "Um, okay, whatever gives you happiness"
+								1:
+									dialog_bubble.message = "Are you sure you want THAT much variety? Yeah? Okay."
+								2:
+									dialog_bubble.message = "No matter what you put here, the price will stay the same!"
+						else:
+							rng_answer = randi() % 3
+							match rng_answer:
+								0:
+									conv.add_theme_font_size_override("font_size", 40)
+									dialog_bubble.message = "the boba shop policy states that the shop is not responsible for this product, and that the person making this order has willingly agreed to choose this option without the interferance of the boba staff."
+								1:
+									dialog_bubble.message = "Wow, okay, um, should I look up poison control before I make you this?"
+						dialog_state = 7
 						Global.boba_type.append(boba_menu.boba_type)
 						Global.boba_taste.append(boba_menu.boba_taste)
 						boba_menu.boba_type = Array([], TYPE_INT, "", null)
 						boba_menu.boba_taste = Array([], TYPE_INT, "", null)
-					dialog_bubble.open()
-				5:
-					dialog_state = 6
-					dialog_bubble.message = "YIPPEE"
-					animation_player.play("ByeMenu")
-					boba_menu.clean()
-					dialog_bubble.open()
-				6:
-					dialog_state = 7
-					dialog_bubble.message = "Gib name"
-					name_prompt.visible = true
+						animation_player.play("ByeBoba")
+						boba_menu.clean()
 					dialog_bubble.open()
 				7:
-					if line_edit.text == "":
-						dialog_bubble.message = "Nyo name ;c"
-					else:
-						name_prompt.visible = false
-						Global.cup_name.append(line_edit.text)
-						dialog_bubble.message = line_edit.text
-						line_edit.text = ""
-						dialog_state = 8
+					# Show name prompt
+					conv.add_theme_font_size_override("font_size", 64)
+					dialog_state = 8
+					dialog_bubble.message = "Alright, who will this be for?"
+					name_prompt.visible = true
 					dialog_bubble.open()
 				8:
-					dialog_state = 0
+					customer_name = line_edit.text
+					if customer_name.length() == 0:
+						conv.add_theme_font_size_override("font_size", 56)
+						dialog_bubble.message = "Choosing to stay anonymous. huh? That's fair, I don't trust the government either."
+						line_edit.text = " "
+					else:
+						if customer_name.length() < 10:
+							rng_answer = randi() % 2
+							match rng_answer:
+								0:
+									dialog_bubble.message = "Sweet."
+								1:
+									dialog_bubble.message = "Awesome."
+						else:
+							rng_answer = randi() % 2
+							match rng_answer:
+								0:
+									dialog_bubble.message = "Wow, a bit of a long one huh, I hope I can spell it correctly"
+								1:
+									dialog_bubble.message = "... Do you maybe have any nicknames?"
+					name_prompt.visible = false
+					Global.cup_name.append(line_edit.text)
+					line_edit.text = ""
+					dialog_state = 9
+					dialog_bubble.open()
+				9:
+					dialog_state = 1
+					conv.add_theme_font_size_override("font_size", 64)
 					if cup_count >= 4:
 						cup_status = CupStatus.MAX
-						dialog_bubble.message = "nyo more space ;3c"
+						conv.add_theme_font_size_override("font_size", 44)
+						dialog_bubble.message = "We're trying to prevent these so called \"boba scalpers\" that are going around nowadays, so we have to limit your drinks to 4. Sorry, store policy."
 						dialog_bubble.open()
 					else:
-						dialog_bubble.message = "Another one? ;3"
-						dialog_bubble.open()
+						dialog_bubble.visible = false
 						next.visible = false
 						another_drink.visible = true
 					
 		CupStatus.MAX:
 			match dialog_state:
-				0:
-					dialog_state = 1
-					dialog_bubble.message = "time for drinks ;3"
-					dialog_bubble.open()
 				1:
+					dialog_state = 2
+					if cup_count > 1:
+						dialog_bubble.message = "Awesome! Enjoy your drinks!"
+					else:
+						dialog_bubble.message = "Awesome! Enjoy your drink!"
+					dialog_bubble.open()
+				2:
 					get_tree().change_scene_to_packed(scene)
 
 func _on_next_pressed() -> void:
@@ -111,6 +212,7 @@ func _on_next_pressed() -> void:
 func _on_yes_pressed() -> void:
 	another_drink.visible = false
 	next.visible = true
+	dialog_bubble.visible = true
 	dialog()
 
 
@@ -118,4 +220,5 @@ func _on_no_pressed() -> void:
 	cup_status = CupStatus.MAX
 	another_drink.visible = false
 	next.visible = true
+	dialog_bubble.visible = true
 	dialog()

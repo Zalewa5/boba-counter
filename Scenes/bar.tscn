@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bmjutjioj6aq7"]
 
 [ext_resource type="Script" uid="uid://c8agkc1xwsovf" path="res://Scenes/bar.gd" id="1_ggknq"]
-[ext_resource type="Texture2D" uid="uid://d3443kgqceuje" path="res://Assets/background.png" id="2_ggknq"]
+[ext_resource type="Texture2D" uid="uid://d3443kgqceuje" path="res://Assets/Title Screen + Menu/background.png" id="2_ggknq"]
 
 [node name="Bar" type="Node2D"]
 script = ExtResource("1_ggknq")

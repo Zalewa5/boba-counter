@@ -39,13 +39,14 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qfvh4"]
-radius = 20.025
+radius = 17.0
 
 [node name="Popping" type="Node2D"]
 
 [node name="Boba" parent="." instance=ExtResource("1_0qokq")]
 
 [node name="Sprite" parent="Boba" index="0"]
+scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_0qokq")
 
 [node name="Collision" parent="Boba" index="1"]

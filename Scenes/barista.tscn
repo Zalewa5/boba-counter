@@ -1,6 +1,6 @@
-[gd_scene load_steps=43 format=3 uid="uid://bldxl5g8nr4s2"]
+[gd_scene load_steps=47 format=3 uid="uid://bldxl5g8nr4s2"]
 
-[ext_resource type="Texture2D" uid="uid://d3443kgqceuje" path="res://Assets/background.png" id="1_c1s4g"]
+[ext_resource type="Texture2D" uid="uid://d3443kgqceuje" path="res://Assets/Title Screen + Menu/background.png" id="1_c1s4g"]
 [ext_resource type="Script" uid="uid://7ijt8xxarpbv" path="res://Scenes/barista.gd" id="1_tcn13"]
 [ext_resource type="Texture2D" uid="uid://bn55aq7siroqa" path="res://Assets/Title Screen + Menu/Stand.png" id="2_m6jni"]
 [ext_resource type="PackedScene" uid="uid://bmjutjioj6aq7" path="res://Scenes/bar.tscn" id="2_xs73d"]
@@ -13,20 +13,23 @@
 [ext_resource type="Script" uid="uid://3houwh5cym4e" path="res://Scenes/boba_menu.gd" id="7_ms5kt"]
 [ext_resource type="Texture2D" uid="uid://cjk5qskh60h2g" path="res://Assets/Title Screen + Menu/Selection.png" id="8_n52ii"]
 [ext_resource type="Texture2D" uid="uid://cx510hfvohs22" path="res://Assets/Balls/Tapioca Pearls.png" id="9_pkpqt"]
-[ext_resource type="Texture2D" uid="uid://uikce2d2s1d5" path="res://Assets/Title Screen + Menu/Next.png" id="10_8peb6"]
+[ext_resource type="Texture2D" uid="uid://uikce2d2s1d5" path="res://Assets/Buttons/Next.png" id="10_8peb6"]
 [ext_resource type="Script" uid="uid://53idqaq8e5hu" path="res://Scenes/dialog_bubble.gd" id="10_lyero"]
 [ext_resource type="Texture2D" uid="uid://c28ff2w6r631d" path="res://Assets/Balls/Strawberry.png" id="11_8cgv8"]
 [ext_resource type="Texture2D" uid="uid://b2mvnva5tve8q" path="res://Assets/Balls/Passion fruit popping.png" id="12_yx21d"]
-[ext_resource type="Texture2D" uid="uid://d1qd055185cds" path="res://Assets/Title Screen + Menu/AnotherDrink.png" id="13_hd6s8"]
+[ext_resource type="Texture2D" uid="uid://d1qd055185cds" path="res://Assets/Buttons/AnotherDrink.png" id="13_hd6s8"]
 [ext_resource type="Texture2D" uid="uid://jpfxsr7bio47" path="res://Assets/Balls/Lychee popping.png" id="13_pqp21"]
 [ext_resource type="Texture2D" uid="uid://cq5tyv43vj2y1" path="res://Assets/Balls/Dragon Fruit popping.png" id="14_8570y"]
-[ext_resource type="Texture2D" uid="uid://dftolbpb7vklu" path="res://Assets/Title Screen + Menu/Name Prompt.png" id="14_nsn0p"]
+[ext_resource type="Texture2D" uid="uid://dftolbpb7vklu" path="res://Assets/Buttons/Name Prompt.png" id="14_nsn0p"]
 [ext_resource type="Texture2D" uid="uid://d3nojrxaqdyu8" path="res://Assets/Balls/Lemon Popping.png" id="15_4rr08"]
 [ext_resource type="Texture2D" uid="uid://cofkpf88d0r1q" path="res://Assets/Balls/Blueberry Popping.png" id="16_bjkdl"]
 [ext_resource type="Texture2D" uid="uid://cijtentqv24bk" path="res://Assets/Balls/Mango Jelly.png" id="17_sisq3"]
 [ext_resource type="Texture2D" uid="uid://bcig27ycdafsy" path="res://Assets/Balls/Green Apple Jelly.png" id="18_0nuha"]
 [ext_resource type="Texture2D" uid="uid://78eulyjxxu3" path="res://Assets/Balls/Grape Jelly.png" id="19_wsd4a"]
 [ext_resource type="Texture2D" uid="uid://btonv3a3nv5eh" path="res://Assets/Balls/Coffee Jelly.png" id="20_wnubw"]
+[ext_resource type="Texture2D" uid="uid://h7xygsibp3kv" path="res://Assets/Buttons/Cup Sizes.png" id="23_n52ii"]
+[ext_resource type="Script" uid="uid://bkw5ewoxbks01" path="res://Scenes/cup_sizes.gd" id="24_pkpqt"]
+[ext_resource type="FontFile" uid="uid://0bgfkgsbv3oy" path="res://Assets/Fonts/Lilly/Lilly__.ttf" id="27_8cgv8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ew3u8"]
 atlas = ExtResource("3_8bn03")
@@ -110,34 +113,6 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_8peb6"]
 resource_name = "BobaMenu"
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BobaMenu:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.5, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-500, 539.5), Vector2(487, 539.5)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TeaMenu:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(487, 539.5), Vector2(-500, 539.5)]
-}
-
-[sub_resource type="Animation" id="Animation_hd6s8"]
-resource_name = "ByeMenu"
 length = 0.5
 step = 0.1
 tracks/0/type = "value"
@@ -150,7 +125,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(487, 539.5), Vector2(-500, 539.5)]
+"values": [Vector2(-500, 539.5), Vector2(487, 539.5)]
 }
 
 [sub_resource type="Animation" id="Animation_tcn13"]
@@ -209,10 +184,45 @@ tracks/0/keys = {
 "values": [Vector2(-500, 539.5), Vector2(487, 539.5)]
 }
 
+[sub_resource type="Animation" id="Animation_pkpqt"]
+resource_name = "ByeTea"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TeaMenu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(487, 539.5), Vector2(-500, 539.5)]
+}
+
+[sub_resource type="Animation" id="Animation_hd6s8"]
+resource_name = "ByeBoba"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BobaMenu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(487, 539.5), Vector2(-500, 539.5)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8peb6"]
 _data = {
 &"BobaMenu": SubResource("Animation_8peb6"),
-&"ByeMenu": SubResource("Animation_hd6s8"),
+&"ByeBoba": SubResource("Animation_hd6s8"),
+&"ByeTea": SubResource("Animation_pkpqt"),
 &"RESET": SubResource("Animation_tcn13"),
 &"TeaMenu": SubResource("Animation_743ta")
 }
@@ -693,6 +703,7 @@ text = "0"
 
 [node name="Selection" type="TextureRect" parent="TeaMenu/Button"]
 visible = false
+layout_mode = 0
 offset_right = 451.0
 offset_bottom = 154.0
 scale = Vector2(0.57, 0.62)
@@ -720,6 +731,7 @@ text = "1"
 
 [node name="Selection" type="TextureRect" parent="TeaMenu/Button2"]
 visible = false
+layout_mode = 0
 offset_right = 451.0
 offset_bottom = 165.0
 scale = Vector2(0.57, 0.62)
@@ -748,6 +760,7 @@ text = "2"
 
 [node name="Selection" type="TextureRect" parent="TeaMenu/Button3"]
 visible = false
+layout_mode = 0
 offset_right = 451.0
 offset_bottom = 154.0
 scale = Vector2(0.57, 0.62)
@@ -775,6 +788,7 @@ text = "3"
 
 [node name="Selection" type="TextureRect" parent="TeaMenu/Button4"]
 visible = false
+layout_mode = 0
 offset_right = 451.0
 offset_bottom = 154.0
 scale = Vector2(0.57, 0.62)
@@ -803,6 +817,7 @@ text = "4"
 
 [node name="Selection" type="TextureRect" parent="TeaMenu/Button5"]
 visible = false
+layout_mode = 0
 offset_right = 451.0
 offset_bottom = 154.0
 scale = Vector2(0.57, 0.62)
@@ -830,6 +845,7 @@ text = "5"
 
 [node name="Selection" type="TextureRect" parent="TeaMenu/Button6"]
 visible = false
+layout_mode = 0
 offset_right = 451.0
 offset_bottom = 154.0
 scale = Vector2(0.57, 0.62)
@@ -857,6 +873,7 @@ text = "6"
 
 [node name="Selection" type="TextureRect" parent="TeaMenu/Button7"]
 visible = false
+layout_mode = 0
 offset_right = 451.0
 offset_bottom = 154.0
 scale = Vector2(0.57, 0.62)
@@ -884,6 +901,7 @@ text = "7"
 
 [node name="Selection" type="TextureRect" parent="TeaMenu/Button8"]
 visible = false
+layout_mode = 0
 offset_right = 451.0
 offset_bottom = 154.0
 scale = Vector2(0.57, 0.62)
@@ -912,6 +930,7 @@ text = "8"
 
 [node name="Selection" type="TextureRect" parent="TeaMenu/Button9"]
 visible = false
+layout_mode = 0
 offset_right = 451.0
 offset_bottom = 154.0
 scale = Vector2(0.57, 0.62)
@@ -930,6 +949,44 @@ Tea"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="CupSizes" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(489, 540)
+texture = ExtResource("23_n52ii")
+script = ExtResource("24_pkpqt")
+
+[node name="Small" type="Button" parent="CupSizes"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -276.0
+offset_top = -336.0
+offset_right = 271.0
+offset_bottom = -204.0
+text = "0"
+
+[node name="Medium" type="Button" parent="CupSizes"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -275.0
+offset_top = -156.0
+offset_right = 272.0
+offset_bottom = -24.0
+text = "1"
+
+[node name="Large" type="Button" parent="CupSizes"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -275.0
+offset_top = 24.0
+offset_right = 272.0
+offset_bottom = 156.0
+text = "2"
+
+[node name="Infini-cup" type="Button" parent="CupSizes"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -275.0
+offset_top = 204.0
+offset_right = 272.0
+offset_bottom = 336.0
+text = "3"
+
 [node name="DialogBubble" type="TextureRect" parent="."]
 offset_left = 965.0
 offset_top = 649.0
@@ -942,12 +999,15 @@ metadata/_edit_lock_ = true
 [node name="Message" type="Label" parent="DialogBubble"]
 layout_mode = 0
 offset_left = 27.0
-offset_top = 99.0
+offset_top = 87.0
 offset_right = 910.0
 offset_bottom = 383.0
 theme_override_colors/font_color = Color(0.129412, 0.113725, 0.145098, 1)
-theme_override_fonts/font = ExtResource("6_vl2ng")
-theme_override_font_sizes/font_size = 100
+theme_override_constants/line_spacing = -18
+theme_override_fonts/font = ExtResource("27_8cgv8")
+theme_override_font_sizes/font_size = 64
+text = "We're trying to prevent these so called \"boba scalpers\" that are going around nowadays, so we have to limit your drinks to 4. Sorry, store policy."
+autowrap_mode = 3
 visible_characters = 0
 visible_ratio = 0.0
 
@@ -1014,8 +1074,10 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_nsn0p")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0w6so")
 placeholder_text = "write name here"
 alignment = 1
+max_length = 20
 context_menu_enabled = false
 deselect_on_focus_loss_enabled = false
+caret_blink = true
 
 [connection signal="animation_finished" from="DialogBubble/AnimationPlayer" to="DialogBubble" method="_on_animation_player_animation_finished"]
 [connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

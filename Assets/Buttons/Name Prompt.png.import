@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jykrn30q7pjx"
-path="res://.godot/imported/Cup 1.png-8c549e6fcb1efd2cd2245cbaf3b3f9e1.ctex"
+uid="uid://dftolbpb7vklu"
+path="res://.godot/imported/Name Prompt.png-f11ec7396470bc02ac5d4ee29726fc0a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cup 1.png"
-dest_files=["res://.godot/imported/Cup 1.png-8c549e6fcb1efd2cd2245cbaf3b3f9e1.ctex"]
+source_file="res://Assets/Buttons/Name Prompt.png"
+dest_files=["res://.godot/imported/Name Prompt.png-f11ec7396470bc02ac5d4ee29726fc0a.ctex"]
 
 [params]
 

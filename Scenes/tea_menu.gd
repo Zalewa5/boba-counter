@@ -20,3 +20,8 @@ func _ready() -> void:
 					b.find_child("Selection").visible = false
 				button.find_child("Selection").visible = true
 			)
+
+func clean() -> void:
+	for button in get_children():
+		if button is BaseButton:
+			button.find_child("Selection", true, false).visible = false
