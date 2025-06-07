@@ -3,13 +3,14 @@ extends Node2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var dialog_bubble: TextureRect = $DialogBubble
 @onready var tea_menu: Sprite2D = $TeaMenu
-@onready var next: TextureButton = $Next
+@onready var next: BaseButton = $Next
 @onready var another_drink: TextureRect = $AnotherDrink
 @onready var name_prompt: TextureRect = $NamePrompt
 @onready var line_edit: LineEdit = $NamePrompt/LineEdit
 @onready var boba_menu: Sprite2D = $BobaMenu
 @onready var cup_sizes: Sprite2D = $CupSizes
 @onready var conv: Label = $DialogBubble/Message
+@onready var yapper: AnimatedSprite2D = $Yapper
 
 @export var scene: PackedScene
 
@@ -24,7 +25,7 @@ var boba_type_size: int
 var customer_name: String
 
 func _ready() -> void:
-	dialog()
+	animation_player.play("Yap")
 
 func dialog():
 	match cup_status:
@@ -159,6 +160,7 @@ func dialog():
 					name_prompt.visible = true
 					dialog_bubble.open()
 				8:
+					# Saves name to table
 					customer_name = line_edit.text
 					if customer_name.length() == 0:
 						conv.add_theme_font_size_override("font_size", 56)
@@ -185,6 +187,7 @@ func dialog():
 					dialog_state = 9
 					dialog_bubble.open()
 				9:
+					# If already at 4 cups force to end else give option to get another cup
 					dialog_state = 1
 					conv.add_theme_font_size_override("font_size", 64)
 					if cup_count >= 4:
@@ -206,7 +209,9 @@ func dialog():
 						dialog_bubble.message = "Awesome! Enjoy your drink!"
 					dialog_bubble.open()
 				2:
-					get_tree().change_scene_to_packed(scene)
+					next.visible = false
+					dialog_bubble.visible = false
+					animation_player.play("YapBye")
 
 func _on_next_pressed() -> void:
 	dialog()
@@ -225,3 +230,12 @@ func _on_no_pressed() -> void:
 	next.visible = true
 	dialog_bubble.visible = true
 	dialog()
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "Yap":
+		dialog_bubble.visible = true
+		next.visible = true
+		dialog()
+	if anim_name == "YapBye":
+		get_tree().change_scene_to_packed(scene)

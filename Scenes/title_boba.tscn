@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://ca0vd5yby07g2"]
+
+[ext_resource type="Script" uid="uid://cmvd6241bs5v3" path="res://Scenes/title_boba.gd" id="1_gaydq"]
+[ext_resource type="Texture2D" uid="uid://d033sdx8luykc" path="res://Assets/Title Screen + Menu/TitleBoba1.png" id="1_k4f48"]
+[ext_resource type="Texture2D" uid="uid://clk2e0l07pdca" path="res://Assets/Title Screen + Menu/TitleBoba2.png" id="2_gaydq"]
+[ext_resource type="Texture2D" uid="uid://btg30414lqlj7" path="res://Assets/Title Screen + Menu/TitleBoba3.png" id="3_x2o3y"]
+[ext_resource type="Texture2D" uid="uid://dqmklxtmy6u7q" path="res://Assets/Title Screen + Menu/TitleBoba4.png" id="4_eimw2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ukxx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_k4f48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gaydq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_x2o3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_eimw2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="TitleBoba" type="Node2D"]
+script = ExtResource("1_gaydq")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8ukxx")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1.5, 1.5)
+scale = Vector2(12.45, 11.15)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

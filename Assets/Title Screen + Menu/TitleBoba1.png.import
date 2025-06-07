@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rpgrgqa3w68a"
-path="res://.godot/imported/Start.png-af64ba81d0e7a8eab3817f59d02c0049.ctex"
+uid="uid://d033sdx8luykc"
+path="res://.godot/imported/TitleBoba1.png-9781ecfa3c052a1407f4a8d278cf8378.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Buttons/Start.png"
-dest_files=["res://.godot/imported/Start.png-af64ba81d0e7a8eab3817f59d02c0049.ctex"]
+source_file="res://Assets/Title Screen + Menu/TitleBoba1.png"
+dest_files=["res://.godot/imported/TitleBoba1.png-9781ecfa3c052a1407f4a8d278cf8378.ctex"]
 
 [params]
 

@@ -1,8 +1,7 @@
-[gd_scene load_steps=47 format=3 uid="uid://bldxl5g8nr4s2"]
+[gd_scene load_steps=52 format=3 uid="uid://bldxl5g8nr4s2"]
 
 [ext_resource type="Texture2D" uid="uid://d3443kgqceuje" path="res://Assets/Title Screen + Menu/background.png" id="1_c1s4g"]
 [ext_resource type="Script" uid="uid://7ijt8xxarpbv" path="res://Scenes/barista.gd" id="1_tcn13"]
-[ext_resource type="Texture2D" uid="uid://bn55aq7siroqa" path="res://Assets/Title Screen + Menu/Stand.png" id="2_m6jni"]
 [ext_resource type="PackedScene" uid="uid://bmjutjioj6aq7" path="res://Scenes/bar.tscn" id="2_xs73d"]
 [ext_resource type="Texture2D" uid="uid://dnihfvkyl1by3" path="res://Assets/Title Screen + Menu/Yapp.png" id="3_8bn03"]
 [ext_resource type="Texture2D" uid="uid://bslvu7vvimmw4" path="res://Assets/Title Screen + Menu/Menu (Pearls).png" id="4_ik4nu"]
@@ -31,6 +30,10 @@
 [ext_resource type="Script" uid="uid://bkw5ewoxbks01" path="res://Scenes/cup_sizes.gd" id="24_pkpqt"]
 [ext_resource type="FontFile" uid="uid://0bgfkgsbv3oy" path="res://Assets/Fonts/Lilly/Lilly__.ttf" id="27_8cgv8"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkpqt"]
+atlas = ExtResource("3_8bn03")
+region = Rect2(0, 0, 643, 1029)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ew3u8"]
 atlas = ExtResource("3_8bn03")
 region = Rect2(0, 0, 643, 1029)
@@ -51,7 +54,7 @@ region = Rect2(1929, 0, 643, 1029)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_m6jni")
+"texture": SubResource("AtlasTexture_pkpqt")
 }],
 "loop": true,
 "name": &"default",
@@ -200,6 +203,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Yapper:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2300, 565.5)]
+}
 
 [sub_resource type="Animation" id="Animation_743ta"]
 resource_name = "TeaMenu"
@@ -218,14 +233,70 @@ tracks/0/keys = {
 "values": [Vector2(-500, 539.5), Vector2(487, 539.5)]
 }
 
+[sub_resource type="Animation" id="Animation_8cgv8"]
+resource_name = "Yap"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Yapper:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2300, 565.5), Vector2(1598.5, 565.5)]
+}
+
+[sub_resource type="Animation" id="Animation_yx21d"]
+resource_name = "YapBye"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Yapper:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1598.5, 565.5), Vector2(2300, 565.5)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8peb6"]
 _data = {
 &"BobaMenu": SubResource("Animation_8peb6"),
 &"ByeBoba": SubResource("Animation_hd6s8"),
 &"ByeTea": SubResource("Animation_pkpqt"),
 &"RESET": SubResource("Animation_tcn13"),
-&"TeaMenu": SubResource("Animation_743ta")
+&"TeaMenu": SubResource("Animation_743ta"),
+&"Yap": SubResource("Animation_8cgv8"),
+&"YapBye": SubResource("Animation_yx21d")
 }
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8cgv8"]
+atlas = ExtResource("10_8peb6")
+region = Rect2(0, 0, 222, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yx21d"]
+atlas = ExtResource("10_8peb6")
+region = Rect2(0, 102, 222, 102)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pqp21"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8cgv8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yx21d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nsn0p"]
 
@@ -250,9 +321,9 @@ limit_bottom = 1080
 metadata/_edit_lock_ = true
 
 [node name="Yapper" type="AnimatedSprite2D" parent="."]
-position = Vector2(1598.5, 565.5)
+position = Vector2(2300, 565.5)
 sprite_frames = SubResource("SpriteFrames_tcn13")
-metadata/_edit_lock_ = true
+autoplay = "default"
 
 [node name="BobaMenu" type="Sprite2D" parent="."]
 position = Vector2(-500, 539.5)
@@ -988,6 +1059,7 @@ offset_bottom = 336.0
 text = "3"
 
 [node name="DialogBubble" type="TextureRect" parent="."]
+visible = false
 offset_left = 965.0
 offset_top = 649.0
 offset_right = 965.0
@@ -1020,12 +1092,19 @@ libraries = {
 &"": SubResource("AnimationLibrary_8peb6")
 }
 
-[node name="Next" type="TextureButton" parent="."]
+[node name="Next" type="Button" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
 offset_left = 968.0
 offset_top = 608.0
-offset_right = 1189.0
-offset_bottom = 710.0
-texture_normal = ExtResource("10_8peb6")
+offset_right = 1190.0
+offset_bottom = 707.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Next"]
+position = Vector2(111, 49)
+sprite_frames = SubResource("SpriteFrames_pqp21")
+autoplay = "default"
+frame_progress = 0.193438
 
 [node name="AnotherDrink" type="TextureRect" parent="."]
 visible = false
@@ -1079,6 +1158,7 @@ deselect_on_focus_loss_enabled = false
 caret_blink = true
 
 [connection signal="animation_finished" from="DialogBubble/AnimationPlayer" to="DialogBubble" method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="AnotherDrink/Yes" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="AnotherDrink/No" to="." method="_on_no_pressed"]
