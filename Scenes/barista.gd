@@ -69,6 +69,10 @@ func dialog():
 				3:
 					# Shows drink size buttons
 					cup_sizes.visible = true
+					$CupSizes/Small.disabled = true
+					$CupSizes/Medium.disabled = true
+					$CupSizes/Large.disabled = true
+					$"CupSizes/Infini-cup".disabled = true
 					dialog_state = 4
 					dialog_bubble.message = "How large do you want the drink to be?"
 					next.visible = false
@@ -192,7 +196,6 @@ func dialog():
 						dialog_bubble.visible = false
 						next.visible = false
 						another_drink.visible = true
-					
 		CupStatus.MAX:
 			match dialog_state:
 				1:

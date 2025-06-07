@@ -21,3 +21,7 @@ func close():
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "typewriter":
 		button.disabled = false
+		get_parent().find_child("CupSizes").find_child("Small").disabled = false
+		get_parent().find_child("CupSizes").find_child("Medium").disabled = false
+		get_parent().find_child("CupSizes").find_child("Large").disabled = false
+		get_parent().find_child("CupSizes").find_child("Infini-cup").disabled = false
