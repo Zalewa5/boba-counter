@@ -14,10 +14,8 @@ func _process(delta: float) -> void:
 func pause():
 	if paused:
 		pause_menu.hide()
-		Engine.time_scale = 1
 	else:
 		pause_menu.show()
-		Engine.time_scale = 0
 	paused = !paused
 
 func _ready() -> void:
