@@ -107,7 +107,7 @@ region = Rect2(0, 0, 931, 408)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjkdl"]
 atlas = ExtResource("24_8cgv8")
-region = Rect2(0, 408, 931, 408)
+region = Rect2(0, 409, 931, 408)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sisq3"]
 animations = [{
@@ -1153,6 +1153,8 @@ visible = false
 position = Vector2(1432.5, 854.5)
 sprite_frames = SubResource("SpriteFrames_sisq3")
 autoplay = "default"
+frame = 1
+frame_progress = 0.320783
 script = ExtResource("10_lyero")
 metadata/_edit_lock_ = true
 
@@ -1215,11 +1217,11 @@ offset_right = 873.0
 offset_bottom = 212.0
 
 [node name="NamePrompt" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(138, 316)
 sprite_frames = SubResource("SpriteFrames_wsd4a")
 autoplay = "default"
-frame = 1
-frame_progress = 0.873307
+frame_progress = 0.924486
 centered = false
 
 [node name="LineEdit" type="LineEdit" parent="NamePrompt"]
