@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmjutjioj6aq7"]
+[gd_scene load_steps=4 format=3 uid="uid://bmjutjioj6aq7"]
 
 [ext_resource type="Script" uid="uid://c8agkc1xwsovf" path="res://Scenes/bar.gd" id="1_ggknq"]
 [ext_resource type="Texture2D" uid="uid://d3443kgqceuje" path="res://Assets/Title Screen + Menu/background.png" id="2_ggknq"]
+[ext_resource type="PackedScene" uid="uid://cay4q0lvat7ee" path="res://Scenes/pause_menu.tscn" id="3_ggknq"]
 
 [node name="Bar" type="Node2D"]
 script = ExtResource("1_ggknq")
@@ -17,3 +18,8 @@ limit_left = 0
 limit_top = 0
 limit_right = 1920
 limit_bottom = 1080
+
+[node name="Cups" type="Node" parent="."]
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_ggknq")]
+visible = false

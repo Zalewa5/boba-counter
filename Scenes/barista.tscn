@@ -1,12 +1,12 @@
-[gd_scene load_steps=52 format=3 uid="uid://bldxl5g8nr4s2"]
+[gd_scene load_steps=65 format=3 uid="uid://bldxl5g8nr4s2"]
 
 [ext_resource type="Texture2D" uid="uid://d3443kgqceuje" path="res://Assets/Title Screen + Menu/background.png" id="1_c1s4g"]
 [ext_resource type="Script" uid="uid://7ijt8xxarpbv" path="res://Scenes/barista.gd" id="1_tcn13"]
 [ext_resource type="PackedScene" uid="uid://bmjutjioj6aq7" path="res://Scenes/bar.tscn" id="2_xs73d"]
 [ext_resource type="Texture2D" uid="uid://dnihfvkyl1by3" path="res://Assets/Title Screen + Menu/Yapp.png" id="3_8bn03"]
+[ext_resource type="PackedScene" uid="uid://cay4q0lvat7ee" path="res://Scenes/pause_menu.tscn" id="3_8cgv8"]
 [ext_resource type="Texture2D" uid="uid://bslvu7vvimmw4" path="res://Assets/Title Screen + Menu/Menu (Pearls).png" id="4_ik4nu"]
 [ext_resource type="Texture2D" uid="uid://c5sc8yf3vusn" path="res://Assets/Title Screen + Menu/Menu (Tea flavour).png" id="5_vl2ng"]
-[ext_resource type="Texture2D" uid="uid://deeaaqguhjnd5" path="res://Assets/Title Screen + Menu/Speech.png" id="6_743ta"]
 [ext_resource type="Script" uid="uid://24ou542ld6jh" path="res://Scenes/tea_menu.gd" id="6_tcn13"]
 [ext_resource type="FontFile" uid="uid://025v4gi7455b" path="res://Assets/Fonts/hey_bro/HeyBro!-Regular.otf" id="6_vl2ng"]
 [ext_resource type="Script" uid="uid://3houwh5cym4e" path="res://Scenes/boba_menu.gd" id="7_ms5kt"]
@@ -16,19 +16,20 @@
 [ext_resource type="Script" uid="uid://53idqaq8e5hu" path="res://Scenes/dialog_bubble.gd" id="10_lyero"]
 [ext_resource type="Texture2D" uid="uid://c28ff2w6r631d" path="res://Assets/Balls/Strawberry.png" id="11_8cgv8"]
 [ext_resource type="Texture2D" uid="uid://b2mvnva5tve8q" path="res://Assets/Balls/Passion fruit popping.png" id="12_yx21d"]
-[ext_resource type="Texture2D" uid="uid://d1qd055185cds" path="res://Assets/Buttons/AnotherDrink.png" id="13_hd6s8"]
 [ext_resource type="Texture2D" uid="uid://jpfxsr7bio47" path="res://Assets/Balls/Lychee popping.png" id="13_pqp21"]
 [ext_resource type="Texture2D" uid="uid://cq5tyv43vj2y1" path="res://Assets/Balls/Dragon Fruit popping.png" id="14_8570y"]
-[ext_resource type="Texture2D" uid="uid://dftolbpb7vklu" path="res://Assets/Buttons/Name Prompt.png" id="14_nsn0p"]
 [ext_resource type="Texture2D" uid="uid://d3nojrxaqdyu8" path="res://Assets/Balls/Lemon Popping.png" id="15_4rr08"]
 [ext_resource type="Texture2D" uid="uid://cofkpf88d0r1q" path="res://Assets/Balls/Blueberry Popping.png" id="16_bjkdl"]
 [ext_resource type="Texture2D" uid="uid://cijtentqv24bk" path="res://Assets/Balls/Mango Jelly.png" id="17_sisq3"]
 [ext_resource type="Texture2D" uid="uid://bcig27ycdafsy" path="res://Assets/Balls/Green Apple Jelly.png" id="18_0nuha"]
 [ext_resource type="Texture2D" uid="uid://78eulyjxxu3" path="res://Assets/Balls/Grape Jelly.png" id="19_wsd4a"]
 [ext_resource type="Texture2D" uid="uid://btonv3a3nv5eh" path="res://Assets/Balls/Coffee Jelly.png" id="20_wnubw"]
-[ext_resource type="Texture2D" uid="uid://h7xygsibp3kv" path="res://Assets/Buttons/Cup Sizes.png" id="23_n52ii"]
+[ext_resource type="Texture2D" uid="uid://cvd8uyuow66jw" path="res://Assets/Buttons/Sizes.png" id="22_8cgv8"]
+[ext_resource type="Texture2D" uid="uid://wn3r8fhyi226" path="res://Assets/Title Screen + Menu/SpeechBubble.png" id="24_8cgv8"]
 [ext_resource type="Script" uid="uid://bkw5ewoxbks01" path="res://Scenes/cup_sizes.gd" id="24_pkpqt"]
 [ext_resource type="FontFile" uid="uid://0bgfkgsbv3oy" path="res://Assets/Fonts/Lilly/Lilly__.ttf" id="27_8cgv8"]
+[ext_resource type="Texture2D" uid="uid://dhheulxyndhn1" path="res://Assets/Buttons/AnotherDrink.png" id="28_8cgv8"]
+[ext_resource type="Texture2D" uid="uid://c6avbk4blxi2w" path="res://Assets/Buttons/Name.png" id="29_8cgv8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pkpqt"]
 atlas = ExtResource("3_8bn03")
@@ -75,6 +76,50 @@ animations = [{
 }],
 "loop": true,
 "name": &"yap",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqp21"]
+atlas = ExtResource("22_8cgv8")
+region = Rect2(0, 0, 546, 676)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8570y"]
+atlas = ExtResource("22_8cgv8")
+region = Rect2(546, 0, 546, 676)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4rr08"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqp21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8570y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rr08"]
+atlas = ExtResource("24_8cgv8")
+region = Rect2(0, 0, 931, 408)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjkdl"]
+atlas = ExtResource("24_8cgv8")
+region = Rect2(0, 408, 931, 408)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sisq3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rr08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjkdl")
+}],
+"loop": true,
+"name": &"default",
 "speed": 5.0
 }]
 
@@ -292,6 +337,50 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yx21d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsd4a"]
+atlas = ExtResource("28_8cgv8")
+region = Rect2(0, 0, 872, 211)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnubw"]
+atlas = ExtResource("28_8cgv8")
+region = Rect2(0, 211, 872, 211)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m3fa0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsd4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnubw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sisq3"]
+atlas = ExtResource("29_8cgv8")
+region = Rect2(0, 0, 871, 217)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nuha"]
+atlas = ExtResource("29_8cgv8")
+region = Rect2(0, 217, 871, 217)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wsd4a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sisq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0nuha")
 }],
 "loop": true,
 "name": &"default",
@@ -1020,60 +1109,58 @@ Tea"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CupSizes" type="Sprite2D" parent="."]
+[node name="CupSizes" type="AnimatedSprite2D" parent="."]
 visible = false
 position = Vector2(489, 540)
-texture = ExtResource("23_n52ii")
+sprite_frames = SubResource("SpriteFrames_4rr08")
+autoplay = "default"
 script = ExtResource("24_pkpqt")
 
 [node name="Small" type="Button" parent="CupSizes"]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = -276.0
+offset_left = -166.0
 offset_top = -336.0
-offset_right = 271.0
+offset_right = 165.0
 offset_bottom = -204.0
 text = "0"
 
 [node name="Medium" type="Button" parent="CupSizes"]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = -275.0
+offset_left = -200.0
 offset_top = -156.0
-offset_right = 272.0
+offset_right = 201.0
 offset_bottom = -24.0
 text = "1"
 
 [node name="Large" type="Button" parent="CupSizes"]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = -275.0
+offset_left = -236.0
 offset_top = 24.0
-offset_right = 272.0
+offset_right = 236.0
 offset_bottom = 156.0
 text = "2"
 
 [node name="Infini-cup" type="Button" parent="CupSizes"]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = -275.0
+offset_left = -272.0
 offset_top = 204.0
 offset_right = 272.0
 offset_bottom = 336.0
 text = "3"
 
-[node name="DialogBubble" type="TextureRect" parent="."]
+[node name="DialogBubble" type="AnimatedSprite2D" parent="."]
 visible = false
-offset_left = 965.0
-offset_top = 649.0
-offset_right = 965.0
-offset_bottom = 649.0
-texture = ExtResource("6_743ta")
+position = Vector2(1432.5, 854.5)
+sprite_frames = SubResource("SpriteFrames_sisq3")
+autoplay = "default"
 script = ExtResource("10_lyero")
 metadata/_edit_lock_ = true
 
 [node name="Message" type="Label" parent="DialogBubble"]
-layout_mode = 0
-offset_left = 27.0
-offset_top = 87.0
-offset_right = 910.0
-offset_bottom = 383.0
+offset_left = -439.5
+offset_top = -109.5
+offset_right = 443.5
+offset_bottom = 186.5
 theme_override_colors/font_color = Color(0.129412, 0.113725, 0.145098, 1)
 theme_override_constants/line_spacing = -18
 theme_override_fonts/font = ExtResource("27_8cgv8")
@@ -1106,17 +1193,15 @@ sprite_frames = SubResource("SpriteFrames_pqp21")
 autoplay = "default"
 frame_progress = 0.193438
 
-[node name="AnotherDrink" type="TextureRect" parent="."]
+[node name="AnotherDrink" type="AnimatedSprite2D" parent="."]
 visible = false
-offset_left = 72.0
-offset_top = 319.0
-offset_right = 948.0
-offset_bottom = 533.0
-texture = ExtResource("13_hd6s8")
+position = Vector2(138, 324)
+sprite_frames = SubResource("SpriteFrames_m3fa0")
+autoplay = "default"
+centered = false
 
 [node name="Yes" type="Button" parent="AnotherDrink"]
 self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
 offset_left = 2.0
 offset_top = 89.0
 offset_right = 431.0
@@ -1124,22 +1209,20 @@ offset_bottom = 211.0
 
 [node name="No" type="Button" parent="AnotherDrink"]
 self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
 offset_left = 445.0
 offset_top = 89.0
 offset_right = 873.0
 offset_bottom = 212.0
 
-[node name="NamePrompt" type="TextureRect" parent="."]
-visible = false
-offset_left = 64.0
-offset_top = 280.0
-offset_right = 940.0
-offset_bottom = 502.0
-texture = ExtResource("14_nsn0p")
+[node name="NamePrompt" type="AnimatedSprite2D" parent="."]
+position = Vector2(138, 316)
+sprite_frames = SubResource("SpriteFrames_wsd4a")
+autoplay = "default"
+frame = 1
+frame_progress = 0.873307
+centered = false
 
 [node name="LineEdit" type="LineEdit" parent="NamePrompt"]
-layout_mode = 0
 offset_left = 17.0
 offset_top = 113.0
 offset_right = 859.0
@@ -1156,6 +1239,9 @@ max_length = 20
 context_menu_enabled = false
 deselect_on_focus_loss_enabled = false
 caret_blink = true
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_8cgv8")]
+visible = false
 
 [connection signal="animation_finished" from="DialogBubble/AnimationPlayer" to="DialogBubble" method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

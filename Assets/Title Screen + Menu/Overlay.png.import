@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5as73tgx40yy"
-path="res://.godot/imported/Grape Tea.png-6900944a45a3ae7de50b6be3d9dc124f.ctex"
+uid="uid://diai36w1oh2f7"
+path="res://.godot/imported/Overlay.png-6c7c01d35caee2f39a2da7bed6ca188c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Flavours/Grape Tea.png"
-dest_files=["res://.godot/imported/Grape Tea.png-6900944a45a3ae7de50b6be3d9dc124f.ctex"]
+source_file="res://Assets/Title Screen + Menu/Overlay.png"
+dest_files=["res://.godot/imported/Overlay.png-6c7c01d35caee2f39a2da7bed6ca188c.ctex"]
 
 [params]
 

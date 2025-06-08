@@ -1,4 +1,4 @@
-extends TextureRect
+extends AnimatedSprite2D
 
 @onready var button: BaseButton = $"../Next"
 @onready var animation_player: AnimationPlayer = $AnimationPlayer

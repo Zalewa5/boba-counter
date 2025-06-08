@@ -1,16 +1,17 @@
 extends Node2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var dialog_bubble: TextureRect = $DialogBubble
+@onready var dialog_bubble: AnimatedSprite2D = $DialogBubble
 @onready var tea_menu: Sprite2D = $TeaMenu
 @onready var next: BaseButton = $Next
-@onready var another_drink: TextureRect = $AnotherDrink
-@onready var name_prompt: TextureRect = $NamePrompt
+@onready var another_drink: AnimatedSprite2D = $AnotherDrink
+@onready var name_prompt: AnimatedSprite2D = $NamePrompt
 @onready var line_edit: LineEdit = $NamePrompt/LineEdit
 @onready var boba_menu: Sprite2D = $BobaMenu
-@onready var cup_sizes: Sprite2D = $CupSizes
+@onready var cup_sizes: AnimatedSprite2D = $CupSizes
 @onready var conv: Label = $DialogBubble/Message
 @onready var yapper: AnimatedSprite2D = $Yapper
+@onready var pause_menu: Control = $PauseMenu
 
 @export var scene: PackedScene
 
@@ -23,6 +24,21 @@ var rng_answer: int = 0
 var cup_size: int = -1 # 0 - small; 1 - medium; 2 - large; 3 - infinicup
 var boba_type_size: int
 var customer_name: String
+var paused: bool = false
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("pause"):
+		pause()
+
+func pause():
+	if paused:
+		pause_menu.hide()
+		Engine.time_scale = 1
+	else:
+		pause_menu.show()
+		Engine.time_scale = 0
+	paused = !paused
+
 
 func _ready() -> void:
 	animation_player.play("Yap")

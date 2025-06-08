@@ -99,6 +99,6 @@ text_overrun_behavior = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
-polygon = PackedVector2Array(-164, -140, -136, 67, -104, 278, -38, 297, 43, 292, 95, 276, 111, 178, 128, 67, 155, -142, 165, -140, 104, 284, 42, 308, -42, 307, -112, 285, -132, 167, -177, -140)
+polygon = PackedVector2Array(-164, -140, -130, 61, -97, 276, -29, 296, 45, 295, 104, 280, 120, 176, 143, 55, 167, -137, 177, -135, 112, 288, 42, 308, -42, 307, -108, 281, -124, 167, -177, -140)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

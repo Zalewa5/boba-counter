@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw2qpqc5oox4j"
-path="res://.godot/imported/Strawberry Tea.png-ee193f14bfabcfce5fd149248d90dc78.ctex"
+uid="uid://dv8chahodyy81"
+path="res://.godot/imported/Name Prompt.png-4dcf35641f163f1cb982196c128cb4ed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Flavours/Strawberry Tea.png"
-dest_files=["res://.godot/imported/Strawberry Tea.png-ee193f14bfabcfce5fd149248d90dc78.ctex"]
+source_file="res://Assets/Title Screen + Menu/Name Prompt.png"
+dest_files=["res://.godot/imported/Name Prompt.png-4dcf35641f163f1cb982196c128cb4ed.ctex"]
 
 [params]
 

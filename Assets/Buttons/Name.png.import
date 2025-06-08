@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h7xygsibp3kv"
-path="res://.godot/imported/Cup Sizes.png-06a37e60d6e3341f55ea177dce9fc4c3.ctex"
+uid="uid://c6avbk4blxi2w"
+path="res://.godot/imported/Name.png-400f75bdbffd33a8fd9327905df55eb9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Buttons/Cup Sizes.png"
-dest_files=["res://.godot/imported/Cup Sizes.png-06a37e60d6e3341f55ea177dce9fc4c3.ctex"]
+source_file="res://Assets/Buttons/Name.png"
+dest_files=["res://.godot/imported/Name.png-400f75bdbffd33a8fd9327905df55eb9.ctex"]
 
 [params]
 

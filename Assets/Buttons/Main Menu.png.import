@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://deeaaqguhjnd5"
-path="res://.godot/imported/Speech.png-409c6ed6ab0906b09ec36c1dff2bc361.ctex"
+uid="uid://df0oieyarael1"
+path="res://.godot/imported/Main Menu.png-aad85e671be54be96ce9c981d0a8c38d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Title Screen + Menu/Speech.png"
-dest_files=["res://.godot/imported/Speech.png-409c6ed6ab0906b09ec36c1dff2bc361.ctex"]
+source_file="res://Assets/Buttons/Main Menu.png"
+dest_files=["res://.godot/imported/Main Menu.png-aad85e671be54be96ce9c981d0a8c38d.ctex"]
 
 [params]
 

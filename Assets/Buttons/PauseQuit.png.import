@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca5apvmuufyly"
-path="res://.godot/imported/Label.png-5c5ce8294dbdad8ebd3efba4de574480.ctex"
+uid="uid://8f6dybekjgwq"
+path="res://.godot/imported/PauseQuit.png-a4165e56fcfd329bc28051d3a344e8c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Title Screen + Menu/Label.png"
-dest_files=["res://.godot/imported/Label.png-5c5ce8294dbdad8ebd3efba4de574480.ctex"]
+source_file="res://Assets/Buttons/PauseQuit.png"
+dest_files=["res://.godot/imported/PauseQuit.png-a4165e56fcfd329bc28051d3a344e8c2.ctex"]
 
 [params]
 

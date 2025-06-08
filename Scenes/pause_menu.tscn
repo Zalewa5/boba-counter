@@ -1,0 +1,146 @@
+[gd_scene load_steps=15 format=3 uid="uid://cay4q0lvat7ee"]
+
+[ext_resource type="Texture2D" uid="uid://diai36w1oh2f7" path="res://Assets/Title Screen + Menu/Overlay.png" id="1_bpi0q"]
+[ext_resource type="Script" uid="uid://b1proacuejjiu" path="res://Scenes/pause_menu.gd" id="1_myy0f"]
+[ext_resource type="Texture2D" uid="uid://yii2gafedkl7" path="res://Assets/Buttons/Resume.png" id="2_vmyb1"]
+[ext_resource type="Texture2D" uid="uid://df0oieyarael1" path="res://Assets/Buttons/Main Menu.png" id="3_myy0f"]
+[ext_resource type="Texture2D" uid="uid://8f6dybekjgwq" path="res://Assets/Buttons/PauseQuit.png" id="4_sjs17"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmyb1"]
+atlas = ExtResource("2_vmyb1")
+region = Rect2(0, 0, 654, 184)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myy0f"]
+atlas = ExtResource("2_vmyb1")
+region = Rect2(0, 185, 654, 184)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ix48p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmyb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myy0f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_524vl"]
+atlas = ExtResource("3_myy0f")
+region = Rect2(0, 0, 654, 184)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fi7f"]
+atlas = ExtResource("3_myy0f")
+region = Rect2(0, 184, 654, 184)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uscpe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_524vl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fi7f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_taale"]
+atlas = ExtResource("4_sjs17")
+region = Rect2(0, 0, 654, 184)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7fiq"]
+atlas = ExtResource("4_sjs17")
+region = Rect2(0, 184, 654, 184)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6wqnn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_taale")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7fiq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="PauseMenu" type="Control"]
+z_index = 100
+z_as_relative = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_myy0f")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_bpi0q")
+
+[node name="CenterContainer" type="CenterContainer" parent="TextureRect"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/CenterContainer"]
+layout_mode = 2
+
+[node name="Resume" type="Button" parent="TextureRect/CenterContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(654, 184)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TextureRect/CenterContainer/VBoxContainer/Resume"]
+sprite_frames = SubResource("SpriteFrames_ix48p")
+autoplay = "default"
+frame_progress = 0.517769
+centered = false
+
+[node name="HSeparator" type="HSeparator" parent="TextureRect/CenterContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+
+[node name="MainMenu" type="Button" parent="TextureRect/CenterContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(654, 184)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TextureRect/CenterContainer/VBoxContainer/MainMenu"]
+sprite_frames = SubResource("SpriteFrames_uscpe")
+autoplay = "default"
+frame_progress = 0.113657
+centered = false
+
+[node name="HSeparator2" type="HSeparator" parent="TextureRect/CenterContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+
+[node name="Quit" type="Button" parent="TextureRect/CenterContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(654, 184)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TextureRect/CenterContainer/VBoxContainer/Quit"]
+sprite_frames = SubResource("SpriteFrames_6wqnn")
+autoplay = "default"
+frame_progress = 0.81118
+centered = false
+
+[connection signal="pressed" from="TextureRect/CenterContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="TextureRect/CenterContainer/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="TextureRect/CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

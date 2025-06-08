@@ -1,4 +1,4 @@
-extends Sprite2D
+extends AnimatedSprite2D
 
 var cup_size: int = -1 # 0 - small; 1 - medium; 2 - large; 3 - infinicup
 

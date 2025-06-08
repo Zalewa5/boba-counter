@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://stdaggbubt0l"
-path="res://.godot/imported/Omonously Blue Tea.png-a7003adb33a349539a61577c354aa422.ctex"
+uid="uid://wn3r8fhyi226"
+path="res://.godot/imported/SpeechBubble.png-8931b39d4c0b62a5ed76ead5db4e2913.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Flavours/Omonously Blue Tea.png"
-dest_files=["res://.godot/imported/Omonously Blue Tea.png-a7003adb33a349539a61577c354aa422.ctex"]
+source_file="res://Assets/Title Screen + Menu/SpeechBubble.png"
+dest_files=["res://.godot/imported/SpeechBubble.png-8931b39d4c0b62a5ed76ead5db4e2913.ctex"]
 
 [params]
 
